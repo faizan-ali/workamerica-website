@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         /*
          *  Uploading to AWS S3. Pulls credentials from aws.json in root directory to upload website files to
          *  workamerica.co S3 bucket
-          *  TODO Replace master credentials with restricted account credentials
+         *  TODO Replace master credentials with restricted account credentials
          * */
 
         aws_s3: {
@@ -55,8 +55,8 @@ module.exports = function (grunt) {
         },
 
         /*
-        * Compiling Slim. Takes all .slim files in slim and converts to .html files with the same name in root
-        * */
+         * Compiling Slim. Takes all .slim files in slim and converts to .html files with the same name in root
+         * */
         slim: {
             dev: {
                 files: [{
@@ -83,8 +83,8 @@ module.exports = function (grunt) {
         },
 
         /*
-        * Compiling SASS. Takes all .scss files in sass and coverts to .css files with the same name in css
-        * */
+         * Compiling SASS. Takes all .scss files in sass and coverts to .css files with the same name in css
+         * */
         sass: {
             dev: {
                 options: {
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: '*.scss',
+                    src: ['*.scss', '!_*.scss'],
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -114,9 +114,46 @@ module.exports = function (grunt) {
         },
 
         /*
-        * Minifying Javascript. Takes all .js files (ignoring .min.js files) in js and minifies them, storing in the same directory
-        * and overwriting existing minified files
-        * */
+         * Linting JavaScript. Attempts to programatically detect and report errors and potential problems in code.
+         * */
+        jshint: {
+            files: ['js/*.js'],
+            // Ignores minified files
+            options: {
+                ignores: ['js/*.min.js']
+            }
+        },
+
+        /*
+         * Linting CSS. Attempts to programatically detect and report errors and potential problems in code.
+         * */
+        csslint: {
+            strict: {
+                options: {
+                    import: 2
+                },
+                src: ['css/*.css', '!css/*.min.css']
+            },
+            lax: {
+                options: {
+                    import: false
+                },
+                src: ['css/*.css', '!css/*.min.css']
+            }
+        },
+
+        scsslint: {
+            allFiles: ['sass/*.scss'],
+            options: {
+                colorizeOutput: true,
+                exclude: 'sass/grid.scss'
+            }
+        },
+
+        /*
+         * Minifying Javascript. Takes all .js files (ignoring .min.js files) in js and minifies them, storing in the same directory
+         * and overwriting existing minified files
+         * */
         uglify: {
             js: {
                 files: [{
@@ -131,8 +168,8 @@ module.exports = function (grunt) {
         },
 
         /*
-        * Minifying CSS. Takes all .css files (ignoring .min.css files) in css and minifies them, storing in the same directory
-        * */
+         * Minifying CSS. Takes all .css files (ignoring .min.css files) in css and minifies them, storing in the same directory
+         * */
         cssmin: {
             css: {
                 files: [{
@@ -146,16 +183,16 @@ module.exports = function (grunt) {
         },
 
         /*
-        * Real time SASS->CSS & SLIM->HTML
-        * */
+         * Real time SASS->CSS & SLIM->HTML
+         * */
         watch: {
             sass: {
-                files: 'sass/{,*/}*.{scss,sass}',
+                files: 'sass/*.scss',
                 tasks: ['sass:dev']
-            }
-            ,
+            },
+
             slim: {
-                files: 'slim/{,*/}*.slim',
+                files: 'slim/*.slim',
                 tasks: ['slim:dev']
             }
         }
@@ -168,14 +205,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-scss-lint');
 
 // Default task.
-    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'uglify', 'cssmin']);
-    grunt.registerTask('watch', ['sass:dev', 'slim:dev', 'watch']);
-    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'uglify' , 'cssmin', 'aws_s3']);
+    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin']);
+    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 }
 ;
