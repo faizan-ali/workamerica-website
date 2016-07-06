@@ -46,10 +46,10 @@ module.exports = function (grunt) {
                 // Grabs all HTML and minified CSS & JS files and deploys to root for HTML, css for CSS,
                 // js for JS, and img for images
                 files: [
-                    {expand: true, cwd: 'css', src: '*.mini.css', dest: 'css'},
+                    {expand: true, cwd: 'css', src: '*.min.css', dest: 'css'},
                     {expand: true, cwd: 'img', src: '**', dest: 'img'},
                     {expand: true, cwd: '', src: '*.html', dest: '/'},
-                    {expand: true, cwd: 'js', src: '*.mini.js', dest: 'js'}
+                    {expand: true, cwd: 'js', src: '*.min.js', dest: 'js'}
                 ]
             }
         },
@@ -202,6 +202,7 @@ module.exports = function (grunt) {
 
         /*
          * Postprocessing CSS. Applies several post-processors to CSS using PostCSS
+         * So far: Autoprefixer
          * */
         postcss: {
             options: {
@@ -211,6 +212,31 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: ['css/*.css', '!css/*.min.css']
+            }
+        },
+
+        /*
+        * Cleaning working directory. Cleans between choices of all, HTML, or CSS(minified/normal/all),
+        * Javascript (minified)
+        * */
+        clean: {
+            all: {
+                src: ['*.html', 'css/*.css*', 'js/*.min.js']
+            },
+            html: {
+                src: '*.html'
+            },
+            css: {
+                src: 'css/*.css'
+            },
+            mincss:{
+                src: 'css/*.min.css'
+            },
+            normalcss: {
+                src: ['css/*.css', '!css/*.min.css']
+            },
+            js: {
+                src: ['js/*.min.js']
             }
         },
 
@@ -243,6 +269,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-htmllint');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
 // Default task.
     grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
