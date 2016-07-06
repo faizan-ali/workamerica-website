@@ -1,3 +1,5 @@
+#Contains rules enforced by SCSS Linter
+
 scss_files: "sass/**/*.scss"
 plugin_directories: ['.scss-linters']
 
