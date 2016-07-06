@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: ['*.scss', '!_*.scss'],
+                    src: '{,*/}*.scss',
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: '*.scss',
+                    src: '{,*/}*.scss',
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -146,12 +146,12 @@ module.exports = function (grunt) {
          * Linting SASS. Attempts to programatically detect and report errors and potential problems in code.
          * */
         scsslint: {
-            allFiles: ['sass/*.scss'],
+            allFiles: ['sass/{,*/}*.scss'],
             options: {
                 force: true,
                 config: '.scss-lint.yml',
                 colorizeOutput: true,
-                exclude: 'sass/grid.scss'
+                exclude: 'sass/utility/*'
             }
         },
 
@@ -225,7 +225,7 @@ module.exports = function (grunt) {
          * */
         watch: {
             sass: {
-                files: 'sass/*.scss',
+                files: 'sass/{,*/}*.scss',
                 tasks: ['sass:dev']
             },
 

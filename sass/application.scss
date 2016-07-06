@@ -1,0 +1,13 @@
+@import "variable";
+@import "utility/normalize";
+@import "utility/grid";
+@import "components/navbar";
+@import "components/hero";
+
+
+
+$navbar-height: 50px;
+
+.navbar {
+  height: $navbar-height;
+}
