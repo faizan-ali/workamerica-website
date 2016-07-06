@@ -1,90 +1,181 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    // Metadata.
-    pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    // Task configuration.
-    sass: {
-      dist: {
-        files: {
-          'style/template.css' : 'sass/template.scss'
+    // Project configuration.
+    grunt.initConfig({
+        /**
+         * Get package metadata and AWS credentials
+         */
+        pkg: grunt.file.readJSON('package.json'),
+        aws: grunt.file.readJSON('aws.json'),
+
+        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+        '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+
+        /**
+         * Project task configuration
+         */
+
+        /*
+         *  Uploading to AWS S3. Pulls credentials from aws.json in root directory to upload website files to
+         *  workamerica.co S3 bucket
+          *  TODO Replace master credentials with restricted account credentials
+         * */
+
+        aws_s3: {
+            options: {
+                accessKeyId: '<%= aws.AWSAccessKeyId %>',
+                secretAccessKey: '<%= aws.AWSSecretKey %>',
+                region: 'us-west-2',
+                // A high number seems to break the package
+                // TODO Figure out the upper limit
+                uploadConcurrency: 5,
+                downloadConcurrency: 5
+            },
+            production: {
+                options: {
+                    differential: true,
+                    bucket: 'workamerica.co',
+                    params: {
+                        ContentEncoding: 'gzip'
+                    }
+                },
+                // Grabs all HTML and minified CSS & JS files and deploys to root for HTML, css for CSS,
+                // js for JS, and img for images
+                files: [
+                    {expand: true, cwd: 'css', src: '*.mini.css', dest: 'css'},
+                    {expand: true, cwd: 'img', src: '**', dest: 'img'},
+                    {expand: true, cwd: '', src: '*.html', dest: '/'},
+                    {expand: true, cwd: 'js', src: '*.mini.js', dest: 'js'}
+                ]
+            }
+        },
+
+        /*
+        * Compiling Slim. Takes all .slim files in slim and converts to .html files with the same name in root
+        * */
+        slim: {
+            dev: {
+                files: [{
+                    expand: true,
+                    cwd: 'slim',
+                    src: '*.slim',
+                    dest: '',
+                    ext: '.html'
+                }]
+            },
+
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'slim',
+                    src: '*.slim',
+                    dest: '',
+                    ext: '.html'
+                }]
+            }
+        },
+
+        /*
+        * Compiling SASS. Takes all .scss files in sass and coverts to .css files with the same name in css
+        * */
+        sass: {
+            dev: {
+                options: {
+                    style: 'expanded'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'sass',
+                    src: '*.scss',
+                    dest: 'css',
+                    ext: '.css'
+                }]
+            },
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'sass',
+                    src: '*.scss',
+                    dest: 'css',
+                    ext: '.css'
+                }]
+            }
+
+        },
+
+        /*
+        * Minifying Javascript. Takes all .js files (ignoring .min.js files) in js and minifies them, storing in the same directory
+        * and overwriting existing minified files
+        * */
+        uglify: {
+            js: {
+                files: [{
+                    expand: true,
+                    cwd: 'js',
+                    // Ignoring .min.js files
+                    src: ['*.js', '!*.min.js'],
+                    dest: 'js',
+                    ext: '.min.js'
+                }]
+            }
+        },
+
+        /*
+        * Minifying CSS. Takes all .css files (ignoring .min.css files) in css and minifies them, storing in the same directory
+        * */
+        cssmin: {
+            css: {
+                files: [{
+                    expand: true,
+                    cwd: 'css',
+                    src: ['*.css', '*.min.css'],
+                    dest: 'css',
+                    ext: '.min.css'
+                }]
+            }
+        },
+
+        /*
+        * Real time SASS->CSS & SLIM->HTML
+        * */
+        watch: {
+            sass: {
+                files: 'sass/{,*/}*.{scss,sass}',
+                tasks: ['sass:dev']
+            }
+            ,
+            slim: {
+                files: 'slim/{,*/}*.slim',
+                tasks: ['slim:dev']
+            }
         }
-      }
+    });
 
-    },
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      dist: {
-        src: ['lib/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
-      }
-    },
-    uglify: {
-      options: {
-        banner: '<%= banner %>'
-      },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
-      }
-    },
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
-        browser: true,
-        globals: {}
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
-      }
-    },
-    qunit: {
-      files: ['test/**/*.html']
-    },
-    watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
-      }
-    }
-  });
+// These plugins provide necessary tasks.
+    grunt.loadNpmTasks('grunt-aws-s3');
+    grunt.loadNpmTasks('grunt-slim');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-qunit');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+// Default task.
+    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'uglify', 'cssmin']);
+    grunt.registerTask('watch', ['sass:dev', 'slim:dev', 'watch']);
+    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'uglify' , 'cssmin', 'aws_s3']);
 
-  // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-
-};
+}
+;
