@@ -1,13 +1,21 @@
 @import "variable";
 @import "utility/normalize";
 @import "utility/grid";
+@import "components/button";
 @import "components/navbar";
 @import "components/hero";
+@import "components/post";
+
+* {
+  box-sizing: border-box;
+}
 
 
+body {
+  font-family: $main-font;
+}
 
-$navbar-height: 50px;
-
-.navbar {
-  height: $navbar-height;
+h1 {
+  font-size: 36px;
+  font-weight: 300;
 }

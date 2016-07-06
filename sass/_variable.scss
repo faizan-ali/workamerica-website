@@ -1,0 +1,43 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+
+$main-font: 'Open Sans', sans-serif;
+$border-radius: 3px;
+
+$blue: #123f5c;
+$red: #80191e;
+$gray: #f0f0f0;
+$medium-gray: #c6ccd2;
+$dark-gray: #727272;
+$white: #ffffff;
+$black: #000000;
+
+$h1-color: $black;
+$h1-weight: 300;
+$h1-size: 36px;
+
+$h2-color: $black;
+$h2-weight: 300;
+$h2-size: 24px;
+
+$h3-color: $blue;
+$h3-weight: 300;
+$h3-size: 18px;
+
+$p-color: $black;
+$p-weight: 300;
+$p-size: 16px;
+
+// NAV
+$navbar-height: 85px;
+$navbar-font-size: .8em;
+$navbar-button-height: 35px;
+$navbar-button-spacing: 13px;
+$navbar-font-weight: 600;
+
+// HERO
+$hero-height: 500px;
+$hero-outter-padding: 15px;
+$navbar-hero-title-gap: 50px;
+$hero-title-size: 50px;
+$navbar-subtitle-size: 25px;
+$hero-text-weight: 300;

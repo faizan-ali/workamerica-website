@@ -3,17 +3,24 @@ html
   head
     title Slim Examples
     link href='css/application.css' rel='stylesheet' type='text/css'
+    link href="path/to/font-awesome/css/font-awesome.min.css" rel="stylesheet" /
 .hero-image.welder
-  .navbar
-    a.left LOGO
-    ul.right
-      li
-        a About
-      li
-        a How It Works
-      li
-        a.outline Sign Up
+  ul.navbar.transparent
+    li
+      a WorkAmerica
+    li
+      a.outline  Sign Up
+    li
+      a How It Works
+    li
+      a About
   .hero-text
     .hero-title Opportunity is waiting for you
     .hero-subtitle Use your credential to earn what you are worth
-    a.hero-button Select Credential
+    .hero-button
+      .dropdown-button
+        .dropdown-text Select Your Credential
+        .dropdown-arrow V
+
+.container 
+  .post

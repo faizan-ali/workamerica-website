@@ -1,85 +1,36 @@
 .hero-image {
-  height: 500px;
+  height: $hero-height;
+  padding: $hero-outter-padding calc(#{$hero-outter-padding} * 2);
   width: 100%;
   background-position: center;
   background-size: cover;
-  @extend .container;
 
   &.welder {
     background-image: url('../img/welder.png');
   }
-}
-
-
-
-
-.hero {
-  height: 500px;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  font-size: 13px;
-
-  .navbar {
-    @extend .container;
-    padding: 15px 50px;
-    color: white;
-    height: 50px;
-    width: 100%;
-
-    ul {
-      list-style: none;
-
-      li {
-        display: inline-block;
-        a {
-          margin-left: 30px;
-          text-align: center;
-          padding: 5px 10px;
-          font-weight: 600;
-
-          &.outline {
-            border: 2px white solid;
-            border-radius: 3px;
-          }
-        }
-      }
-    }
-  }
-
 
   .hero-text {
-    @extend .container;
-    padding-top: 50px;
-    height: 100%;
-    color: white;
-          text-align: center;
+    color: $white;
+    font-weight: $hero-text-weight;
+    margin-top: $navbar-hero-title-gap;
+    width: 100%;
 
-    .hero-title, .hero-subtitle {
-      width: 100%;
-      font-weight: 100;
-      display: block;
-      text-shadow: 0px 0px 15px rgba(0, 0, 0, .4);
-      margin-bottom: 5px;
+    .hero-title, .hero-subtitle{
+      text-align: center;
     }
 
     .hero-title {
-      font-size: 50px;
+      font-size: $hero-title-size;
+      margin-bottom: calc(#{$navbar-hero-title-gap} / 4);
     }
 
     .hero-subtitle {
-      font-size: 27px;
+      font-size: $navbar-subtitle-size;
+      margin-bottom: calc(#{$navbar-hero-title-gap} / 1);
     }
 
     .hero-button {
-      margin-top: 75px;
-      padding: 10px 20px;
-      border: 1px #828282 solid;
-      color: #757575;
-      box-shadow: 0px 0px 96.57px 14.43px rgba(0, 0, 0, 0.58);
-      border-radius: 3px;
-      display: inline-block;
-      background-color: white;
+       text-align: center;
     }
   }
 }

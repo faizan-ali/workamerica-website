@@ -1,3 +1,66 @@
 .navbar {
-  height: 50;
+  height: $navbar-height;
+  padding: 0px $navbar-button-spacing;
+  margin: 0px;
+  width: 100%;
+
+    &.transparent {
+      background-color: transparent;
+      li {
+        a {
+          color: $white;
+
+          &.outline {
+            border-radius: $border-radius;
+            border: 1px solid $white;
+          }
+        }
+      }
+    }
+
+    &.white {
+      background-color: $white;
+      li {
+        a {
+          color: $blue;
+
+          &.outline {
+            border-radius: $border-radius;
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $blue;
+          }
+        }
+      }
+    }
+
+    li {
+      height: $navbar-button-height;
+      margin: calc((#{$navbar-height} - #{$navbar-button-height}) / 2) calc(#{$navbar-button-spacing} / 2);
+      list-style: none;
+      float: right;
+      display: inline-block;
+
+      &:first-child {
+        float: left;
+
+        a {
+          padding-left: 0px;
+          margin-left: 0px;
+          text-align: left;
+        }
+
+      }
+
+      a {
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        font-size: $navbar-font-size;
+        height: 100%;
+        font-weight: $navbar-font-weight;
+        padding: 7px $navbar-button-spacing;
+        line-height: $navbar-button-height;
+      }
+    }
 }
