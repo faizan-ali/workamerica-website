@@ -142,13 +142,30 @@ module.exports = function (grunt) {
             }
         },
 
+        /*
+         * Linting SASS. Attempts to programatically detect and report errors and potential problems in code.
+         * */
         scsslint: {
             allFiles: ['sass/*.scss'],
             options: {
+                force: true,
                 colorizeOutput: true,
                 exclude: 'sass/grid.scss'
             }
         },
+
+        /*
+         * Linting HTML. Attempts to programatically detect and report errors and potential problems in code.
+         * */
+        htmllint: {
+            all: {
+                options: {
+                    force: false
+                },
+                src: ['*.html']
+            }
+        },
+
 
         /*
          * Minifying Javascript. Takes all .js files (ignoring .min.js files) in js and minifies them, storing in the same directory
@@ -209,10 +226,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-htmllint');
 
 // Default task.
-    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin']);
-    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
+    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'htmllint', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin']);
+    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'htmllint', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
-}
-;
+};
