@@ -132,7 +132,7 @@ module.exports = function (grunt) {
                 options: {
                     import: 2
                 },
-                src: ['css/*.css', '!css/*.min.css']
+                src: ['css/*.css', '!css/*.min.css', '!*normalize.css']
             },
             lax: {
                 options: {
@@ -149,6 +149,7 @@ module.exports = function (grunt) {
             allFiles: ['sass/*.scss'],
             options: {
                 force: true,
+                config: '.scss-lint.yml',
                 colorizeOutput: true,
                 exclude: 'sass/grid.scss'
             }
@@ -160,7 +161,7 @@ module.exports = function (grunt) {
         htmllint: {
             all: {
                 options: {
-                    force: false
+                    force: true
                 },
                 src: ['*.html']
             }
@@ -200,6 +201,26 @@ module.exports = function (grunt) {
         },
 
         /*
+         * Postprocessing CSS. Applies several post-processors to CSS using PostCSS
+         * */
+        postcss: {
+            options: {
+                processors: [
+                    require('autoprefixer')()
+                ]
+            },
+            all: {
+                files: [{
+                    expand: true,
+                    cwd: 'css',
+                    src: ['css/*.css', '!css/*.min.css'],
+                    dest: 'css',
+                    ext: '.css'
+                }]
+            }
+        },
+
+        /*
          * Real time SASS->CSS & SLIM->HTML
          * */
         watch: {
@@ -227,9 +248,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-htmllint');
+    grunt.loadNpmTasks('grunt-postcss');
 
 // Default task.
-    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'htmllint', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin']);
-    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'htmllint', 'jshint', 'csslint:strict', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
+    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
+    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };
