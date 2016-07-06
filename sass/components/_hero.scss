@@ -1,19 +1,17 @@
-$main-spacing: 15px;
-$hero-navbar-padding: 50px 50px;
+.hero-image {
+  height: 500px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  @extend .container;
 
-.container {
-  max-width: 960px;
-  margin   : 0 auto;
-  padding  : 0 $main-spacing;
+  &.welder {
+    background-image: url('../img/welder.png');
+  }
 }
 
-.right {
-  float: right;
-}
 
-.left {
-  float: left;
-}
+
 
 .hero {
   height: 500px;
@@ -24,7 +22,7 @@ $hero-navbar-padding: 50px 50px;
 
   .navbar {
     @extend .container;
-    padding: $hero-navbar-padding;
+    padding: 15px 50px;
     color: white;
     height: 50px;
     width: 100%;
