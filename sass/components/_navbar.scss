@@ -1,66 +1,69 @@
-.navbar {
-  height: $navbar-height;
-  padding: 0px $navbar-button-spacing;
-  margin: 0px;
-  width: 100%;
+$navbar-height: 80px;
 
-    &.transparent {
-      background-color: transparent;
-      li {
-        a {
-          color: $white;
+@mixin navbar-variation($background-color, $font-color, $hover-color) {
+  background-color: $background-color;
+  color      : $font-color;
 
-          &.outline {
-            border-radius: $border-radius;
-            border: 1px solid $white;
-          }
-        }
-      }
+  a {
+    color: $font-color;
+
+    &:hover {
+      color: $hover-color;
     }
+  }
+}
 
-    &.white {
-      background-color: $white;
-      li {
-        a {
-          color: $blue;
+.navbar-wrapper {
+  @extend .navbar;
+  margin-bottom : - $navbar-height;
+  padding-top   : 0;
+  padding-bottom: 0;
 
-          &.outline {
-            border-radius: $border-radius;
-            background-color: $blue;
-            color: $white;
-            border: 1px solid $blue;
-          }
-        }
-      }
-    }
+  &.navbar-transparent {
+    @include navbar-variation($transparent, $white, $white);
+  }
+
+  &.navbar-white {
+    @include navbar-variation($white,  $font-color, $secondary-color);
+  }
+
+  &.navbar-light {
+    @include navbar-variation($secondary-color, $white, $main-color);
+  }
+
+  &.navbar-dark {
+    @include navbar-variation($main-color, $white, $secondary-color-light);
+  }
+
+  ul {
+    @extend .navbar-nav, .nav;
+    height : $navbar-height;
+    display: block;
 
     li {
-      height: $navbar-button-height;
-      margin: calc((#{$navbar-height} - #{$navbar-button-height}) / 2) calc(#{$navbar-button-spacing} / 2);
-      list-style: none;
-      float: right;
-      display: inline-block;
+      @extend .nav-item;
 
-      &:first-child {
-        float: left;
-
-        a {
-          padding-left: 0px;
-          margin-left: 0px;
-          text-align: left;
-        }
-
+      + li {
+        margin-left: 2em;
       }
 
       a {
-        cursor: pointer;
-        text-align: center;
-        width: 100%;
-        font-size: $navbar-font-size;
-        height: 100%;
-        font-weight: $navbar-font-weight;
-        padding: 7px $navbar-button-spacing;
-        line-height: $navbar-button-height;
+        @extend .nav-link;
+        padding-top   : 0;
+        padding-bottom: 0;
+        height        : $navbar-height;
+        line-height   : $navbar-height !important;
+        font-size: $font-size-sm;
+
+        &.navbar-logo {
+          @extend .font-weight-boldest;
+          font-size: $font-size-xl;
+        }
+
+        &.navbar-toggler {
+          font-size: $font-size-xl;
+        }
       }
     }
+  }
 }

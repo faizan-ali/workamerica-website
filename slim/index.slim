@@ -1,26 +1,76 @@
 doctype html
 html
   head
-    title Slim Examples
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" 
+    meta content="width=device-width, initial-scale=1" name="viewport" 
     link href='css/application.css' rel='stylesheet' type='text/css'
-    link href="path/to/font-awesome/css/font-awesome.min.css" rel="stylesheet" /
-.hero-image.welder
-  ul.navbar.transparent
-    li
-      a WorkAmerica
-    li
-      a.outline  Sign Up
-    li
-      a How It Works
-    li
-      a About
-  .hero-text
-    .hero-title Opportunity is waiting for you
-    .hero-subtitle Use your credential to earn what you are worth
-    .hero-button
-      .dropdown-button
-        .dropdown-text Select Your Credential
-        .dropdown-arrow V
-
-.container 
-  .post
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    title WorkAmerica  
+  body
+    .navbar-wrapper.navbar-transparent
+      .container
+        ul.pull-xs-left
+          li
+            a.navbar-logo href="#"  WORK
+          li.hidden-md-down
+            a href="#"  About
+          li.hidden-md-down
+            a href="#"  How it Works
+        .collapse.navbar-toggleable-xs#navbar-menu
+          ul.pull-xs-right
+            li.hidden-lg-up
+              a href="#"  About
+            li.hidden-lg-up
+              a href="#"  How It Works
+            li
+              a href="#"  Sign Up
+            li.form-inline
+              a href="#"  Sign In
+        ul.pull-xs-right.hidden-sm-up
+          li
+            a.navbar-toggler.material-icons data-target="#navbar-menu" data-toggle="collapse" type="button"  menu
+    .wrapper.wrapper-gradient
+      .container
+        .col-md-6.p-0.p-t-2.text-xs-left
+          h1.m-b-3 Earning my credential was hard work. Finding a job in my field shouldn't be.
+          h4.m-b-3 Some random shit.
+          p It uses utility classes for typography and spacing to space content out within the larger container.
+    .wrapper.wrapper-gray
+      .container
+        h2.m-b-1 How It Works
+        h6.text-muted.m-b-3.max-width-sm.line-height-lg  Build a profile, connect with the companies you want to work for, and receive alerts when an employer is ready to talk about hiring you.
+        .row.max-width-lg
+          .col-md-4
+            .card-image
+              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
+                .card-block
+                  h5 Card title
+                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
+          .col-md-4
+            .card-image
+              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
+                .card-block
+                  h5 Card title
+                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
+          .col-md-4
+            .card-image
+              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
+                .card-block
+                  h5 Card title
+                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
+    .wrapper.wrapper-white
+      .container
+        h2.m-b-4 What Customers Are Saying
+        .row.max-width-lg
+          .col-md-6
+            .card-image.card-image-left
+              img.img-circle alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
+                .card-block
+                  h5.font-weight-bold Random Person
+                  h6.text-muted.lead  Trifling wondered unpacked ye at he. In household certainty an on tolerably smallness difficult. Many no each like up be is next neat. Put not enjoyment behaviour her supposing. At he pulled object others.
+          .col-md-6
+            .card-image.card-image-left
+              img.img-circle alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
+                .card-block
+                  h5.font-weight-bold Another Person
+                  h6.text-muted.lead  It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.

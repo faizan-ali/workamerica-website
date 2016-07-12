@@ -1,21 +1,16 @@
-@import "variable";
-@import "utility/normalize";
-@import "utility/grid";
-@import "components/button";
+// Bootstrap Import
+@import "bootstrap/bootstrap";
+
+// Variables (Keep below bootstrap and above all else)
+@import "variables";
+
+// Utility Styles
+@import "utility/imports";
+@import "utility/_mixins";
+@import "utility/general";
+
+// Custome Components
+@import "components/card";
 @import "components/navbar";
-@import "components/hero";
-@import "components/post";
-
-* {
-  box-sizing: border-box;
-}
-
-
-body {
-  font-family: $main-font;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 300;
-}
+@import "components/wrapper";
+@import "components/buttons";
