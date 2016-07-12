@@ -1,0 +1,74 @@
+@mixin gradient($main-color, $secondary-color) {
+  background: $main-color;
+  background: -webkit-linear-gradient(to top left, $secondary-color, $main-color);
+  background: linear-gradient(to top left, $secondary-color, $main-color);
+}
+
+
+@mixin spacing {
+   @for $i from 0 through 5{
+    .p-#{$i} {
+      padding: $spacer * $i;
+    }
+
+    .p-l-r-#{$i} {
+      padding-left : $spacer * $i;
+      padding-right: $spacer * $i;
+    }
+
+    .m-b-#{$i} {
+      margin-bottom: $spacer * $i;
+    }
+    @media (max-width: $breakpoint-lg) {
+      .p-l-r-#{$i} {
+        padding-left : ($spacer * $i) * 0.25;
+        padding-right: ($spacer * $i) * 0.25;
+      }
+    }
+  }
+}
+
+@mixin header-weight {
+   @for $i from 1 through 6{
+    h#{$i} {
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+@mixin wrapper-variation-solid($background-color, $font-color, $muted-color, $hover-color) {
+  background-color: $background-color;
+  color      : $font-color;
+
+  .text-muted {
+    color: $muted-color;
+  }
+
+  .nav-item {
+    color: $font-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+@mixin wrapper-variation-gradient($main-bg-color, $secondary-bg-color, $font-color, $muted-color, $hover-color) {
+  @include gradient($main-bg-color, $secondary-bg-color);
+  color      : $font-color;
+
+  .text-muted {
+    color: $muted-color;
+  }
+
+  .nav-item {
+    color: $font-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+@include header-weight;
+@include spacing;

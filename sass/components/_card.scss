@@ -1,0 +1,30 @@
+.card-image {
+  @extend .card;
+  font-weight: $font-weight-normal;
+  background-color: $transparent;
+  overflow: hidden;
+  margin: 0px 0px 2em 0px;
+  border: 0;
+
+  &-left {
+    img, .card-block {
+      @extend .pull-sm-left
+    }
+
+    img {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .card-block {
+      padding-top: 0em;
+      padding-bottom: 0;
+      text-align: left;
+      width: calc(100% - 5rem);
+    }
+
+    &-left {
+      text-align: left;
+    }
+  }
+}

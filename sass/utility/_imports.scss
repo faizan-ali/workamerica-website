@@ -1,0 +1,11 @@
+// Icon Import
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+// Helvetica Neue Import (Main font)
+@font-face {
+  font-family: "Helvetica Neue";
+  src        : url("/assets/fonts/HelveticaNeueLight.otf") format("truetype");
+}
+
+// Open Sans Import (Fallback font)
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';

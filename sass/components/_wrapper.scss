@@ -1,0 +1,33 @@
+.wrapper {
+  @extend .jumbotron, .jumbotron-fluid;
+  padding-top     : $wrapper-padding;
+  padding-bottom  : $wrapper-padding;
+  margin-bottom   : 0;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  &:nth-of-type(2) {
+    padding-top: $navbar-height;
+  }
+
+  &.wrapper-light {
+    @include wrapper-variation-solid($secondary-color, $white, $white, $white);
+  }
+
+  &.wrapper-dark {
+    @include wrapper-variation-solid($main-color, $white, $white, $white);
+  }
+
+  &.wrapper-white {
+    @include wrapper-variation-solid($white, $font-color, $font-color-light, $white);
+  }
+
+  &.wrapper-gray {
+    @include wrapper-variation-solid($gray-lightest, $font-color,  $font-color-light, $main-color-dark);
+  }
+
+  &.wrapper-gradient {
+    @include wrapper-variation-gradient($main-color, $secondary-color, $white, $white, $white);
+  }
+}
