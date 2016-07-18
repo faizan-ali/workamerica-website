@@ -1,6 +1,11 @@
 /*global module:false*/
 module.exports = function (grunt) {
 
+    // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+    require('load-grunt-tasks')(grunt);
+    // shows time taken
+    require('time-grunt')(grunt);
+
     // Project configuration.
     grunt.initConfig({
         /**
@@ -246,33 +251,18 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: 'sass/{,*/}*.scss',
-                tasks: ['sass:dev']
+                tasks: ['newer:sass:dev']
             },
 
             slim: {
                 files: 'slim/*.slim',
-                tasks: ['slim:dev']
+                tasks: ['newer:slim:dev']
             }
         }
     });
 
-// These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-aws-s3');
-    grunt.loadNpmTasks('grunt-slim');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.loadNpmTasks('grunt-htmllint');
-    grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-
 // Default task.
-    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
+    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
     grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };
