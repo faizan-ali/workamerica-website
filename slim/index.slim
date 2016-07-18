@@ -5,72 +5,216 @@ html
     meta content="width=device-width, initial-scale=1" name="viewport" 
     link href='css/application.css' rel='stylesheet' type='text/css'
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    script src="js/general.js"
     title WorkAmerica  
   body
-    .navbar-wrapper.navbar-transparent
+    
+    nav.navbar.navbar-transparent
       .container
-        ul.pull-xs-left
-          li
-            a.navbar-logo href="#"  WORK
-          li.hidden-md-down
-            a href="#"  About
-          li.hidden-md-down
-            a href="#"  How it Works
-        .collapse.navbar-toggleable-xs#navbar-menu
-          ul.pull-xs-right
-            li.hidden-lg-up
-              a href="#"  About
-            li.hidden-lg-up
-              a href="#"  How It Works
-            li
-              a href="#"  Sign Up
-            li.form-inline
-              a href="#"  Sign In
-        ul.pull-xs-right.hidden-sm-up
-          li
-            a.navbar-toggler.material-icons data-target="#navbar-menu" data-toggle="collapse" type="button"  menu
-    .wrapper.wrapper-gradient
+        button.navbar-toggler.hidden-md-up.material-icons.pull-xs-right#show-mobile-nav data-target="#menu-nav" data-toggle="collapse" type="button" menu
+        ul.nav.navbar-nav.pull-xs-left 
+          li.nav-item.p-r-8
+            a.nav-link.navbar-brand.m-r-3 href="http://www.workamerica.co/"
+              img.logo-img alt=("Card image cap") src="img/logo-white.png"
+        ul.nav.navbar-nav.hidden-md-down.pull-xs-left 
+          li.nav-item
+            a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
+          li.nav-item
+            a.nav-link.m-r-4.how-it-works-scroll How it Works
+        #menu-nav.collapse.navbar-toggleable-sm.pull-xs-right
+          ul.nav.navbar-nav
+            li.nav-item.hidden-lg-up
+              a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
+            li.nav-item.hidden-lg-up
+              a.nav-link.m-r-4.how-it-works-scroll  How it Works
+            li.nav-item
+              a.nav-link.m-r-4 href="http://www.workamerica.co/login.html"  Login
+            li.nav-item
+              a.nav-link.m-r-4 href="http://www.workamerica.co/join-now.html"  Join Now
+    #mobile-nav
+      ul.list-unstyled.text-xs-center.p-t-3
+        li
+          a.material-icons#close-mobile-nav close
+        li
+          a href="http://www.workamerica.co/join-now.html"  Join Now
+        li
+          a href="http://www.workamerica.co/login.html"  Login
+        li
+          a href="http://www.workamerica.co/index.html"  Home
+        li
+          a href="http://www.workamerica.co/about.html"  About
+        li
+          a href="http://www.workamerica.co/employers.html"  Employers
+        li
+          a href="http://www.workamerica.co/partners.html"  Partners
+        
+        
+    
+    
+    .wrapper.wrapper-image.p-b-0 style="background-image: url('img/hero.jpg');"             
       .container
-        .col-md-6.p-0.p-t-2.text-xs-left
-          h1.m-b-3 Earning my credential was hard work. Finding a job in my field shouldn't be.
-          h4.m-b-3 Some random shit.
-          p It uses utility classes for typography and spacing to space content out within the larger container.
-    .wrapper.wrapper-gray
+        .row.p-t-10
+          .col-lg-7.col-md-7.hidden-md-down
+            h1.m-b-8. Earning my credential was hard work. Finding a job in my field shouldn't be.
+            a.btn.btn-primary.btn-lg href="http://www.workamerica.co/join-now.html" Request Access
+          .col-lg-4.col-md-4.p-b-0.hidden-md-down.col-md-offset-1.col-lg-offset-0
+            img.img-fluid alt=("Card image cap") src="img/iphone.png"
+          .col-md-12.hidden-lg-up.text-xs-center
+            h1.m-b-8 Earning my credential was hard work. Finding a job in my field shouldn't be.
+            a.btn.btn-primary.btn-lg.m-b-8 href="http://www.workamerica.co/join-now.html" Request Access
+
+    .wrapper.wrapper-white            
+      .container.text-xs-center
+        h3.m-b-5.container.container-md WorkAmerica connects credentialed job seekers with employers in a new and meaningful way.
+        .row
+          .col-sm-6.col-lg-3.col-lg-offset-3.m-b-2
+            a.btn.btn-primary.btn-lg.btn-block href="http://www.workamerica.co/join-now.html" Join Now
+          .col-sm-6.col-lg-3
+            a.btn.btn-primary-outline.btn-lg.btn-block href="http://www.workamerica.co/about.html" Learn More
+            
+            
+    #how-it-works.wrapper.wrapper-image style="background-image: url('img/gradient.png');"            
+      .container.text-xs-center
+        h2.m-b-2 How it Works
+        h5.container.container-md.m-b-0 We're on a mission to employ all American workers with a credential in the trades.
+        .row
+          .col-sm-offset-2.col-sm-8.col-md-4.col-md-offset-0
+            .card.card-transparent.m-t-8
+              img.card-img-top.img-sm alt=("Card image cap") src="img/profile.png" /
+              .card-block
+                h4.card-title Build Your Profile
+                p.card-text Sign up and build your profile to highlight your credentials, skills, work experience and more. It’s fast and easy.
+          .col-sm-offset-2.col-sm-8.col-md-4.col-md-offset-0
+            .card.card-transparent.m-t-8
+              img.card-img-top.img-sm alt=("Card image cap") src="img/chat-bubbles.png" /
+              .card-block
+                h4.card-title Employers Find You
+                p.card-text Once your profile is set up, let employers do the work of searching for you, while you go on taking care of everyday life.
+          .col-sm-offset-2.col-sm-8.col-md-4.col-md-offset-0
+            .card.card-transparent.m-t-8
+              img.card-img-top.img-sm alt=("Card image cap") src="img/calendar.png" /
+              .card-block
+                h4.card-title Start Working
+                p.card-text Compare the job offers you receive, and pick the best one. You’re on way to an amazing and fulfilling career!
+
+    .wrapper.wrapper-white         
       .container
-        h2.m-b-1 How It Works
-        h6.text-muted.m-b-3.max-width-sm.line-height-lg  Build a profile, connect with the companies you want to work for, and receive alerts when an employer is ready to talk about hiring you.
-        .row.max-width-lg
-          .col-md-4
-            .card-image
-              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
-                .card-block
-                  h5 Card title
-                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
-          .col-md-4
-            .card-image
-              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
-                .card-block
-                  h5 Card title
-                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
-          .col-md-4
-            .card-image
-              img.p-l-r-3 alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
-                .card-block
-                  h5 Card title
-                  p.text-muted Some quick example text to build on the card title and make up the bulk of the card's content.
-    .wrapper.wrapper-white
+        .text-xs-center
+          h2.m-b-5.container.container-md How can we help?
+        .row
+          .tab-table.col-xs-12.col-sm-8.col-sm-offset-2.p-l-0.p-r-0 style="background-image: url('img/gradient.png');"
+            .row
+              .col-md-12.p-l-0.p-r-0.text-xs-center.font-size-sm 
+                .col-xs-4.tab-button#tab-one.active  Job Seeker
+                .col-xs-4.tab-button#tab-two  Employer
+                .col-xs-4.tab-button#tab-three  Partner
+            .row
+              .col-md-12.p-a-4.info.text-xs-left.p-l-4
+                p Are you a student or graduate of a credentialed training program in the trades, including skilled trades, allied health, and IT? WorkAmerica is the exclusive recruiting network built just for you. 
+                a.btn.btn-secondary-outline.m-t-3#learn-more-table-btn href="http://www.workamerica.co/join-now.html" Join Now
+    .wrapper           
       .container
-        h2.m-b-4 What Customers Are Saying
-        .row.max-width-lg
-          .col-md-6
-            .card-image.card-image-left
-              img.img-circle alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
-                .card-block
-                  h5.font-weight-bold Random Person
-                  h6.text-muted.lead  Trifling wondered unpacked ye at he. In household certainty an on tolerably smallness difficult. Many no each like up be is next neat. Put not enjoyment behaviour her supposing. At he pulled object others.
-          .col-md-6
-            .card-image.card-image-left
-              img.img-circle alt=("Card image cap") src="http://sunfieldfarm.org/wp-content/uploads/2014/02/profile-placeholder.png" 
-                .card-block
-                  h5.font-weight-bold Another Person
-                  h6.text-muted.lead  It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+        h2.m-b-6.text-xs-center What Customers are Saying
+        .row
+          .col-md-6.col-lg-5.col-lg-offset-1.hidden-xs-down
+            .card.card-transparent.card-img-left.m-b-5
+              img.img-sm alt=("Card image cap") src="img/headshot-one.png" /
+              .card-block.p-t-0
+                h5.card-title.m-b-0 Destiny James
+                p.card-text I was searching for employment in a medical front office position that was close to home and in pediatrics. WorkAmerica brought the right opportunities to me.
+          .col-md-6.col-lg-5.hidden-xs-down
+            .card.card-transparent.card-img-left
+              img.img-sm alt=("Card image cap") src="img/headshot-two.png" /
+              .card-block.p-t-0
+                h5.card-title.m-b-0 Julio Herrera
+                p.card-text I had four years of work experience in a different field, but not HVAC. Using WorkAmerica helped me get a job in HVAC and start a new and better career.
+          
+          .col-md-6.col-lg-5.col-lg-offset-1.text-xs-center.hidden-sm-up
+            .card.card-transparent.m-b-5
+              img.img-sm.m-b-2 alt=("Card image cap") src="img/headshot-one.png" /
+              .card-block.p-t-0
+                h5.card-title Destiny James
+                p.card-text I was searching for employment in a medical front office position that was close to home and in pediatrics. WorkAmerica brought the right opportunities to me.
+          .col-md-6.col-lg-5.text-xs-center.hidden-sm-up
+            .card.card-transparent
+              img.img-sm.m-b-2 alt=("Card image cap") src="img/headshot-two.png" /
+              .card-block.p-t-0
+                h5.card-title Julio Herrera
+                p.card-text I had four years of work experience in a different field, but not HVAC. Using WorkAmerica helped me get a job in HVAC and start a new and better career.
+
+    .wrapper.wrapper-white.wrapper-sm
+        .col-xs-12
+          .container.container-lg
+            img.img-fluid src="img/social-proof.png"
+    
+    .wrapper.wrapper-image style="background-image: url('img/liberty.png');"             
+      .container
+        .row
+          .col-md-12.hidden-lg-up
+            h3.m-b-3 We are on a mission to employ each and every American that holds a credential in the trades.
+            p WorkAmerica connects job seekers to employment opportunities that take full advantage of their training and career potential, via our quality-assured online marketplace.
+            p We service job seekers and employers in multiple trades industries including healthcare, manufacturing, transportation and IT.
+          .col-md-12.col-lg-5.m-t-3
+            form action="http://www.platform.workamerica.co/candidate-signup" method="post"
+              .col-xs-6.p-l-0
+                fieldset.form-group.form-group-white
+                  input.form-control type="text" autocomplete="false" placeholder="First Name" required="true"
+              .col-xs-6.p-r-0
+                fieldset.form-group.form-group-white
+                  input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true"
+              .col-xs-12.p-a-0
+                fieldset.form-group.form-group-white
+                  input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true"
+                fieldset.form-group.form-group-white
+                  input.form-control type="text" autocomplete="false" placeholder="Phone Number"
+                fieldset.form-group.form-group-white
+                  input.form-control type="text" autocomplete="false" placeholder="Message" required="true"
+                button.btn.btn-primary type="submit"  Contact Us
+          .col-md-6.col-lg-offset-1.hidden-md-down
+            h3.m-b-3 We are on a mission to employ each and every American that holds a credential in the trades.
+            p WorkAmerica connects job seekers to employment opportunities that take full advantage of their training and career potential, via our quality-assured online marketplace.
+            p We service job seekers and employers in multiple trades industries including healthcare, manufacturing, transportation and IT.
+
+    .wrapper.wrapper-light.wrapper-sm
+      .container.text-xs-center
+        span.m-b-0.d-inline-block Looking to hire employees in the trades?
+        a.inline-link.p-l-1.font-weight-bold href="http://www.platform.workamerica.co/employer" Click here
+        
+    .footer.wrapper.wrapper-dark
+      .container
+        .row
+          .col-md-6.col-lg-8
+            p.title WorkAmerica
+            p WorkAmerica is closing the skills gap for employers and facilitating access to middle-skill, living wage jobs for job seekers by streamlining the path from vocational education to employment.
+            p Enter your email address to get updates and insights on the future of work.
+          .col-md-3.col-lg-2
+            p.title Navigation
+            ul.list-unstyled
+              li
+                a href="http://www.workamerica.co/about.html" About
+              li
+                a.how-it-works-scroll How it Works
+              li
+                a href="http://www.workamerica.co/employers.html" Employers
+              li
+                a href="http://www.workamerica.co/partners.html" Partners
+          .col-md-3.col-lg-2
+            p.title Contact
+            ul.list-unstyled
+              li Info@workamerica.co
+              li 877-750-2968
+              li Washington, DC
+        .row
+          .col-lg-4.col-md-6.col-xs-12
+            form
+              fieldset.form-group.form-group-light
+                input.form-control placeholder=("Email") type="text"
+    .copyright.wrapper.wrapper-black.wrapper-md
+      .container
+        ul.list-inline.m-a-0
+          li.list-inline-item.m-r-3
+            a Copyright @ 2016
+          li.list-inline-item.m-r-3
+            a Terms & Conditions
+          li.list-inline-item
+            a Privacy Policy

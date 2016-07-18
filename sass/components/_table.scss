@@ -1,0 +1,27 @@
+.tab-table {
+  .tab-button {
+    background-color: white;
+    height: 3rem;
+    line-height: 3rem;
+    color: $main-color;
+    overflow: hidden;
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+    }
+  }
+
+  .active {
+    background-color: transparent;
+    color: $white;
+  }
+
+  .info {
+    color: $white;
+
+    p {
+      margin-bottom: 0px;
+    }
+  }
+}

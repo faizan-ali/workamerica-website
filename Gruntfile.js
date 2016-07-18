@@ -273,6 +273,6 @@ module.exports = function (grunt) {
 
 // Default task.
     grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
-    grunt.registerTask('dist', ['sass:dist', 'slim:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
+    grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };

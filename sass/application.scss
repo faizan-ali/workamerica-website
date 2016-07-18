@@ -1,16 +1,27 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
+// Variables
+@import "variables";
+
 // Bootstrap Import
 @import "bootstrap/bootstrap";
 
-// Variables (Keep below bootstrap and above all else)
-@import "variables";
+
 
 // Utility Styles
 @import "utility/imports";
-@import "utility/_mixins";
+@import "utility/mixins/navbar";
 @import "utility/general";
-
-// Custome Components
-@import "components/card";
-@import "components/navbar";
+//
+// // Custome Components
 @import "components/wrapper";
-@import "components/buttons";
+@import "components/navbar";
+@import "components/card";
+@import "components/form";
+@import "components/footer";
+@import "components/button";
+@import "components/table";

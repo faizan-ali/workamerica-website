@@ -1,0 +1,13 @@
+
+@mixin navbar-variation($background-color, $font-color, $hover-color) {
+  background-color: $background-color;
+  color      : $font-color;
+
+  a {
+    color: $font-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}

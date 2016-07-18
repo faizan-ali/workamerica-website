@@ -28,7 +28,7 @@
 
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
-$gray-light:                #818a91 !default;
+$gray-light:                #737679 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
@@ -66,17 +66,53 @@ $spacers: (
     y:   0
   ),
   1: (
+  x:   ($spacer-x * .5),
+  y:   ($spacer-y * .5)
+  ),
+  2: (
     x:   $spacer-x,
     y:   $spacer-y
   ),
-  2: (
+  3: (
     x:   ($spacer-x * 1.5),
     y:   ($spacer-y * 1.5)
   ),
-  3: (
+  4: (
+    x:   ($spacer-x * 2),
+    y:   ($spacer-y * 2)
+  ),
+  5: (
+    x:   ($spacer-x * 2.5),
+    y:   ($spacer-y * 2.5)
+  ),
+  6: (
     x:   ($spacer-x * 3),
     y:   ($spacer-y * 3)
-  )
+  ),
+  7: (
+    x:   ($spacer-x * 3.5),
+    y:   ($spacer-y * 3.5)
+  ),
+  8: (
+    x:   ($spacer-x * 4),
+    y:   ($spacer-y * 4)
+  ),
+  9: (
+    x:   ($spacer-x * 4.5),
+    y:   ($spacer-y * 4.5)
+  ),
+  10: (
+    x:   ($spacer-x * 5),
+    y:   ($spacer-y * 5)
+  ),
+  11: (
+    x:   ($spacer-x * 5.5),
+    y:   ($spacer-y * 5.5)
+  ),
+  12: (
+    x:   ($spacer-x * 6),
+    y:   ($spacer-y * 6)
+  ),
 ) !default;
 $border-width:               1px !default;
 
@@ -142,7 +178,7 @@ $grid-gutter-width:          1.875rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Helvetica Neue", Times, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
