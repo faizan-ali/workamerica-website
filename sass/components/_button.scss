@@ -1,3 +1,7 @@
+a {
+  cursor: pointer;
+}
+
 .btn-primary {
   background-color: $secondary-color;
   border-color: $secondary-color;
@@ -45,24 +49,24 @@
 }
 
 .btn-warning {
-  background-color: $white;
-  border-color: $white;
-  color: $main-color;
+  background-color: $pink-color;
+  border-color: $pink-color;
+  color: $white;
 
   &:hover {
-    border-color: $white;
+    border-color: $pink-color;
     background-color: $transparent;
-    color: $white;
+    color: $pink-color;
   }
 }
 
 .btn-warning-outline {
-  border-color: $white;
-  color: $white;
+  border-color: $pink-color;
+  color: $pink-color;
 
   &:hover {
-    background-color: $white;
-    border-color: $white;
-    color: $main-color;
+    background-color: $pink-color;
+    border-color: $pink-color;
+    color: $white;
   }
 }

@@ -6,21 +6,21 @@
         p WorkAmerica connects job seekers to employment opportunities that take full advantage of their training and career potential, via our quality-assured online marketplace.
         p We service job seekers and employers in multiple trades industries including healthcare, manufacturing, transportation and IT.
       .col-md-12.col-lg-5.m-t-3
-        form
+        form action="http://www.platform.workamerica.co/api/contact/footer" method="post"
           .col-xs-6.p-l-0
             fieldset.form-group.form-group-white
-              input.form-control type="text" autocomplete="false" placeholder="First Name" required="true"
+              input.form-control type="text" autocomplete="false" placeholder="First Name" required="true" name="firstName"
           .col-xs-6.p-r-0
             fieldset.form-group.form-group-white
-              input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true"
+              input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true" name="lastName"
           .col-xs-12.p-a-0
             fieldset.form-group.form-group-white
-              input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true"
+              input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true" name="email"
             fieldset.form-group.form-group-white
-              input.form-control type="text" autocomplete="false" placeholder="Phone Number"
+              input.form-control type="text" autocomplete="false" placeholder="Phone Number" name="phone"
             fieldset.form-group.form-group-white
-              input.form-control type="text" autocomplete="false" placeholder="Message" required="true"
-            button.btn.btn-primary type="submit"  Contact Us
+              input.form-control type="text" autocomplete="false" placeholder="Message" required="true" name="message"
+            button.btn.btn-warning type="submit"  Contact Us
       .col-md-6.col-lg-offset-1.hidden-md-down
         h3.m-b-3 We are on a mission to employ each and every American that holds a credential in the trades.
         p WorkAmerica connects job seekers to employment opportunities that take full advantage of their training and career potential, via our quality-assured online marketplace.
@@ -57,9 +57,9 @@
           li Washington, DC
     .row
       .col-lg-4.col-md-6.col-xs-12
-        form
+        form action="http://www.platform.workamerica.co/api/subscribe/newsletter" method="post"
           fieldset.form-group.form-group-light
-            input.form-control placeholder=("Email") type="text"
+            input.form-control placeholder=("Email") type="text" name="email"
 .copyright.wrapper.wrapper-black.wrapper-md
   .container
     ul.list-inline.m-a-0

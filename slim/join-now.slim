@@ -7,20 +7,28 @@
     .row
       .col-sm-12.col-md-8.col-md-offset-2.inner-page-offset
         .container.p-a-8.bg-color-white.main-color
-          form
+          form action="http://www.platform.workamerica.co/candidate-register" method="post"
             .col-xs-6.p-l-0
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="First Name" required="true"
+                input.form-control type="text" autocomplete="false" placeholder="First Name" required="true" name="firstName"
             .col-xs-6.p-r-0
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true"
+                input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true" name="lastName"
             .col-xs-12.p-a-0
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true"
+                input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true" name="email"
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="Phone Number"
+                input.form-control type="text" autocomplete="false" placeholder="Phone Number" name="phone"
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="Zip Code" required="true"
+                input.form-control type="text" autocomplete="false" placeholder="Zip Code" required="true" name="zip"
+                input type="hidden" name="browser" value=""
+                input type="hidden" name="browserVersion" value=""
+                input type="hidden" name="os" value=""
+                input type="hidden" name="osVersion" value=""
+                input type="hidden" name="device" value=""
+                input type="hidden" name="deviceType" value=""
+                input type="hidden" name="deviceVendor" value=""
+                input type="hidden" name="sourceWebsite" value="true"
               .text-xs-center
                 button.btn.btn-primary type="submit"  Submit
                                 

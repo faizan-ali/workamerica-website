@@ -254,7 +254,9 @@ module.exports = function (grunt) {
                     'forgot-password.html': ['header-light.html', 'forgot-password.html', 'inner-footer.html'],
                     'join-now.html': ['header-light.html', 'join-now.html', 'inner-footer.html'],
                     'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
-                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html']
+                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html'],
+                    'partners.html': ['header-light.html', 'partners.html', 'inner-footer.html'],
+                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html']
                 }
             }
         },
@@ -265,12 +267,12 @@ module.exports = function (grunt) {
         watch: {
             sassConcat: {
                 files: 'sass/{,*/}*.scss',
-                tasks: ['newer:sass:dev', 'newer:concat:dist']
+                tasks: ['sass:dev']
             },
 
             slimConcat: {
                 files: 'slim/*.slim',
-                tasks: ['newer:slim:dev', 'newer:concat:dist']
+                tasks: ['clean:html', 'newer:slim:dev', 'newer:concat:dist']
             }
         }
     });
