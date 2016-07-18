@@ -263,20 +263,20 @@ module.exports = function (grunt) {
          * Real time SASS->CSS & SLIM->HTML
          * */
         watch: {
-            sass: {
+            sassConcat: {
                 files: 'sass/{,*/}*.scss',
-                tasks: ['newer:sass:dev']
+                tasks: ['newer:sass:dev', 'newer:concat:dist']
             },
 
-            slim: {
+            slimConcat: {
                 files: 'slim/*.slim',
-                tasks: ['newer:slim:dev']
+                tasks: ['newer:slim:dev', 'newer:concat:dist']
             }
         }
     });
 
 // Default task.
-    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'concat', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
+    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'newer:concat', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
     grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };
