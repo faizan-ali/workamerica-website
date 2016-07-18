@@ -245,6 +245,20 @@ module.exports = function (grunt) {
             }
         },
 
+        concat: {
+            dist: {
+                files: {
+                    'index.html': ['header-dark.html', 'index.html', 'outer-footer.html'],
+                    'about.html': ['header-light.html', 'about.html', 'inner-footer.html'],
+                    'employers.html': ['header-light.html', 'employers.html', 'inner-footer.html'],
+                    'forgot-password.html': ['header-light.html', 'forgot-password.html', 'inner-footer.html'],
+                    'join-now.html': ['header-light.html', 'join-now.html', 'inner-footer.html'],
+                    'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
+                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html']
+                }
+            }
+        },
+
         /*
          * Real time SASS->CSS & SLIM->HTML
          * */
@@ -262,7 +276,7 @@ module.exports = function (grunt) {
     });
 
 // Default task.
-    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
+    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'concat', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
     grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };
