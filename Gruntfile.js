@@ -256,7 +256,9 @@ module.exports = function (grunt) {
                     'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
                     'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html'],
                     'partners.html': ['header-light.html', 'partners.html', 'inner-footer.html'],
-                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html']
+                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html'],
+                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html']
+
                 }
             }
         },
