@@ -1,90 +1,17 @@
-doctype html
-html
-  head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" 
-    meta content="width=device-width, initial-scale=1" name="viewport" 
-    link href='css/application.css' rel='stylesheet' type='text/css'
-    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
-    script src="js/general.js"
-    title Join Now - WorkAmerica  
-  body
-  
-  nav.navbar.navbar-white
-    .container
-      button.navbar-toggler.hidden-md-up.material-icons.pull-xs-right#show-mobile-nav data-target="#menu-nav" data-toggle="collapse" type="button" menu
-      ul.nav.navbar-nav.pull-xs-left 
-        li.nav-item.p-r-8
-          a.nav-link.navbar-brand.m-r-3 href="http://www.workamerica.co/"
-            img.logo-img alt=("Card image cap") src="img/logo-rb.png"
-      ul.nav.navbar-nav.hidden-md-down.pull-xs-left 
-        li.nav-item
-          a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
-        li.nav-item
-          a.nav-link.m-r-4 href="http://www.workamerica.co/index.html#how-it-works" How it Works
-      #menu-nav.collapse.navbar-toggleable-sm.pull-xs-right
-        ul.nav.navbar-nav
-          li.nav-item.hidden-lg-up
-            a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
-          li.nav-item.hidden-lg-up
-            a.nav-link.m-r-4.how-it-works-scroll  How it Works
-          li.nav-item
-            a.nav-link.m-r-4 href="http://www.workamerica.co/login.html"  Login
-          li.nav-item
-            a.nav-link.m-r-4 href="http://www.workamerica.co/join-now.html"  Join Now 
-                       
-    .wrapper.wrapper-image style="background-image: url('img/hero.jpg');"             
-      .container.text-xs-center
-        h1.m-b-2.p-t-0.inner-header-offset Login
-        p.m-b-12 Invalid login details
-        
-    .wrapper
-      .container
-        .row
-          .col-sm-12.col-md-8.col-md-offset-2.inner-page-offset
-            .container.p-a-8.bg-color-white.main-color
-              form action="http://www.platform.workamerica.co/CandidateLoginServlet" method="post"
-                fieldset.form-group.form-group-dark
-                  input.form-control name="email" type="text" autocomplete="false" placeholder="Username" required="true"
-                fieldset.form-group.form-group-dark
-                  input.form-control name="password" type="password" autocomplete="false" placeholder="Password"
-                .text-xs-center
-                  button.btn.btn-primary type="submit"  Login
-        
-    .footer.wrapper.wrapper-dark
-      .container
-        .row
-          .col-md-6.col-lg-8
-            p.title WorkAmerica
-            p WorkAmerica is closing the skills gap for employers and facilitating access to middle-skill, living wage jobs for job seekers by streamlining the path from vocational education to employment.
-            p Enter your email address to get updates and insights on the future of work.
-          .col-md-3.col-lg-2
-            p.title Navigation
-            ul.list-unstyled
-              li
-                a href="http://www.workamerica.co/about.html" About
-              li
-                a href="http://www.workamerica.co/index.html#how-it-works" How it Works
-              li
-                a href="http://www.workamerica.co/employers.html" Employers
-              li
-                a href="http://www.workamerica.co/partners.html" Partners
-          .col-md-3.col-lg-2
-            p.title Contact
-            ul.list-unstyled
-              li Info@workamerica.co
-              li 877-750-2968
-              li Washington, DC
-        .row
-          .col-lg-4.col-md-6.col-xs-12
-            form
-              fieldset.form-group.form-group-light
-                input.form-control placeholder=("Email") type="text"
-    .copyright.wrapper.wrapper-black.wrapper-md
-      .container
-        ul.list-inline.m-a-0
-          li.list-inline-item.m-r-3
-            a Copyright @ 2016
-          li.list-inline-item.m-r-3
-            a Terms & Conditions
-          li.list-inline-item
-            a Privacy Policy
+.wrapper.wrapper-image style="background-image: url('img/hero.jpg');"             
+  .container.text-xs-center
+    h1.m-b-2.p-t-0.inner-header-offset Login
+    p.m-b-12 Invalid login details
+    
+.wrapper
+  .container
+    .row
+      .col-sm-12.col-md-8.col-md-offset-2.inner-page-offset
+        .container.p-a-8.bg-color-white.main-color
+          form action="http://www.platform.workamerica.co/CandidateLoginServlet" method="post"
+            fieldset.form-group.form-group-dark
+              input.form-control name="email" type="text" autocomplete="false" placeholder="Username" required="true"
+            fieldset.form-group.form-group-dark
+              input.form-control name="password" type="password" autocomplete="false" placeholder="Password"
+            .text-xs-center
+              button.btn.btn-primary type="submit"  Login

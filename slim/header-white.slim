@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" 
+    meta content="width=device-width, initial-scale=1" name="viewport" 
+    link href='css/application.css' rel='stylesheet' type='text/css'
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    script src="js/general.js"
+  body
+    nav.navbar.navbar-white
+      .container
+        button.navbar-toggler.hidden-md-up.material-icons.pull-xs-right#show-mobile-nav data-target="#menu-nav" data-toggle="collapse" type="button" menu
+        ul.nav.navbar-nav.pull-xs-left 
+          li.nav-item.p-r-8
+            a.nav-link.navbar-brand.m-r-3 href="http://www.workamerica.co/"
+              img.logo-img alt=("Card image cap") src="img/logo-rb.png"
+        ul.nav.navbar-nav.hidden-md-down.pull-xs-left 
+          li.nav-item
+            a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
+          li.nav-item
+            a.nav-link.m-r-4 href="http://www.workamerica.co/index.html#how-it-works" How it Works
+        #menu-nav.collapse.navbar-toggleable-sm.pull-xs-right
+          ul.nav.navbar-nav
+            li.nav-item.hidden-lg-up
+              a.nav-link.m-r-4 href="http://www.workamerica.co/about.html"  About
+            li.nav-item.hidden-lg-up
+              a.nav-link.m-r-4.how-it-works-scroll  How it Works
+            li.nav-item
+              a.nav-link.m-r-4 href="http://www.workamerica.co/login.html"  Login
+            li.nav-item
+              a.nav-link.m-r-4 href="http://www.workamerica.co/join-now.html"  Join Now 
