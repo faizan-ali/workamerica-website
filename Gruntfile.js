@@ -256,9 +256,7 @@ module.exports = function (grunt) {
                     'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
                     'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html'],
                     'partners.html': ['header-light.html', 'partners.html', 'inner-footer.html'],
-                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html'],
-                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html']
-
+                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html']
                 }
             }
         },
@@ -274,13 +272,13 @@ module.exports = function (grunt) {
 
             slimConcat: {
                 files: 'slim/*.slim',
-                tasks: ['clean:html', 'newer:slim:dev', 'newer:concat:dist']
+                tasks: ['clean:html', 'slim:dev', 'concat:dist']
             }
         }
     });
 
 // Default task.
-    grunt.registerTask('dev', ['newer:slim:dev', 'newer:sass:dev', 'newer:postcss', 'newer:concat', 'newer:htmllint', 'newer:jshint', 'newer:scsslint', 'newer:uglify', 'newer:cssmin']);
+    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
     grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };
