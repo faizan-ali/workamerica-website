@@ -63,8 +63,9 @@ module.exports = function (grunt) {
             dev: {
                 files: [{
                     expand: true,
+                    flatten: true,
                     cwd: 'slim',
-                    src: '**.slim',
+                    src: '**/*.slim',
                     dest: '',
                     ext: '.html'
                 }]
@@ -76,8 +77,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
+                    flatten: true,
                     cwd: 'slim',
-                    src: '**.slim',
+                    src: '**/*.slim',
                     dest: '',
                     ext: '.html'
                 }]
@@ -95,7 +97,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: '{,*/}*.scss',
+                    src: ['**/*.scss', '!bootstrap/*.*'],
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -195,7 +197,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'css',
-                    src: ['*.css', '*.min.css'],
+                    src: ['*.css', '!*.min.css'],
                     dest: 'css',
                     ext: '.min.css'
                 }]
@@ -223,7 +225,7 @@ module.exports = function (grunt) {
         * */
         clean: {
             all: {
-                src: ['*.html', 'css/*.css*', 'js/*.min.js']
+                src: ['*.html', 'slim/{,*/}*.html', 'css/*.css*', 'js/*.min.js']
             },
             html: {
                 src: '*.html'
@@ -245,7 +247,7 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 files: {
-                    'index.html': ['header.html','navbar-dark.html', 'index.html', 'outer-footer.html'],
+                    'index.html': ['header.html','navbar-dark.html', 'hero.html', 'connect.html', 'how-it-works.html','how-can-we-help.html', 'what-customers-are-saying.html','social-proof.html', 'outer-footer.html'],
                     'about.html': ['header.html','navbar-light.html', 'about.html', 'inner-footer.html'],
                     'employers.html': ['header.html','navbar-light.html', 'employers.html', 'inner-footer.html'],
                     'forgot-password.html': ['header.html','navbar-light.html', 'forgot-password.html', 'inner-footer.html'],
@@ -264,20 +266,24 @@ module.exports = function (grunt) {
          * Real time SASS->CSS & SLIM->HTML
          * */
         watch: {
-            sassConcat: {
+            jsMin: {
+              files: 'js/{,*/}*.js',
+              tasks: ['uglify']
+            },
+            sass: {
                 files: 'sass/{,*/}*.scss',
-                tasks: ['sass:dev']
+                tasks: ['sass:dev', 'cssmin']
             },
 
             slimConcat: {
-                files: 'slim/*.slim',
+                files: 'slim/{,*/}*.slim',
                 tasks: ['clean:html', 'slim:dev', 'concat:dist']
             }
         }
     });
 
 // Default task.
-    grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
+    grunt.registerTask('dev', ['clean:all', 'slim:dev', 'sass:dev', 'postcss', 'concat', 'jshint', 'uglify', 'cssmin']);
     grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };

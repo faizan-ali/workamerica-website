@@ -8,45 +8,53 @@ $( document ).ready(function() {
 		var zip = getParam('invalidZip');
 		var contact = getParam('contact');
 		var register = getParam('register');
-		var subscribe = getParam('subscribe');
+		var exists = getParam('exists');
 
-console.log("hello");
+		if (exists == 'true') {
+			$("#exists-error").toggleClass('hide');
+			console.log("general");
+		}
 
 		if (invalid == 'true') {
-			$("#general-error").addClass('show');
+			$("#general-error").toggleClass('hide');
+			console.log("general");
 		}
 
 		if (error == 'true') {
-			$("#bad-error").addClass('show');
+			$("#bad-error").toggleClass('hide');
+			console.log("bad");
 		}
 
 		if (name == 'true') {
-			$("#name-error").addClass('show');
+			$("#name-error").toggleClass('hide');
+			console.log("name");
 		}
 
 		if (email == 'true') {
-			$("#email-error").addClass('show');
+			$("#email-error").toggleClass('hide');
+			console.log("email");
 		}
 
 		if (phone == 'true') {
-			$("#phone-error").addClass('show')
+			$("#phone-error").toggleClass('hide');
+			console.log("phone");
 		}
 
 		if (zip == 'true') {
-			$("#zip-error").addClass('show')
+			$("#zip-error").toggleClass('hide');
+			console.log("zip");
 		}
 
 		if (contact == 'true') {
-			$("#contact-thank-you").addClass('show');
-		}
-
-		if (subscribe == 'true') {
-			$("#contact-thank-you").addClass('show');
+			$("#contact-thank-you").toggleClass('hide');
+			console.log("contact");
 		}
 
 		if (register == 'true') {
-			$("#register-thank-you").addClass('show');
+			$("#register-thank-you").toggleClass('hide');
+			console.log("register");
 		}
+
 	});
 });
 
