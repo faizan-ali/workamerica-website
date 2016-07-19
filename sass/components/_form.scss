@@ -1,3 +1,13 @@
+.form-error {
+  color: $pink-color;
+  margin-top: -.75rem;
+  font-size: $font-size-sm;
+  display: none;
+
+  .show {
+      display: block;
+  }
+}
 
 form {
   .form-group {

@@ -8,6 +8,9 @@
       .col-sm-12.col-md-8.col-md-offset-2.inner-page-offset
         .container.p-a-8.bg-color-white.main-color
           form action="http://www.platform.workamerica.co/login-servlet" method="post"
+            .text-xs-center
+              .form-error#general-error Your e-mail address or password was invalid.
+              .form-error#bad-error An error has occurred. Please try again.
             .col-xs-12.p-a-0
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="Username" required="true" name="email"
