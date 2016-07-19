@@ -44,9 +44,6 @@ module.exports = function (grunt) {
                 options: {
                     differential: true,
                     bucket: 'workamerica.co',
-                    params: {
-                        ContentEncoding: 'gzip'
-                    }
                 },
                 // Grabs all HTML and minified CSS & JS files and deploys to root for HTML, css for CSS,
                 // js for JS, and img for images
@@ -67,7 +64,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'slim',
-                    src: '*.slim',
+                    src: '**.slim',
                     dest: '',
                     ext: '.html'
                 }]
@@ -75,12 +72,12 @@ module.exports = function (grunt) {
 
             dist: {
                 options: {
-                    style: 'compressed'
+                    style: 'expanded'
                 },
                 files: [{
                     expand: true,
                     cwd: 'slim',
-                    src: '*.slim',
+                    src: '**.slim',
                     dest: '',
                     ext: '.html'
                 }]
@@ -105,7 +102,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    style: 'compressed'
+                    style: 'expanded'
                 },
                 files: [{
                     expand: true,
@@ -248,15 +245,17 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 files: {
-                    'index.html': ['header-dark.html', 'index.html', 'outer-footer.html'],
+                    'index.html': ['header.html','navbar-dark.html', 'index.html', 'outer-footer.html'],
                     'about.html': ['header-light.html', 'about.html', 'inner-footer.html'],
                     'employers.html': ['header-light.html', 'employers.html', 'inner-footer.html'],
                     'forgot-password.html': ['header-light.html', 'forgot-password.html', 'inner-footer.html'],
                     'join-now.html': ['header-light.html', 'join-now.html', 'inner-footer.html'],
                     'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
-                    'thank-you.html': ['header-light.html', 'thank-you.html', 'inner-footer.html'],
-                    'partners.html': ['header-light.html', 'partners.html', 'inner-footer.html'],
-                    'privacy-policy.html': ['header-light.html', 'privacy-policy.html', 'inner-footer.html']
+                    'thank-you.html': ['header.html','navbar-light.html', 'thank-you.html', 'inner-footer.html'],
+                    'partners.html': ['header.html','navbar-light.html', 'partners.html', 'inner-footer.html'],
+                    'privacy-policy.html': ['header.html','navbar-light.html', 'privacy-policy.html', 'inner-footer.html'],
+                    'terms-and-conditions.html': ['header.html','navbar-light.html', 'terms-and-conditions.html', 'inner-footer.html'],
+                    'invalid.html': ['header.html','navbar-light.html', 'invalid.html', 'inner-footer.html']
                 }
             }
         },
@@ -279,6 +278,6 @@ module.exports = function (grunt) {
 
 // Default task.
     grunt.registerTask('dev', ['slim:dev', 'sass:dev', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin']);
-    grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
+    grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
 
 };

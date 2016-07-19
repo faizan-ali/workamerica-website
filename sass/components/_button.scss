@@ -2,6 +2,10 @@ a {
   cursor: pointer;
 }
 
+.custome-button {
+
+}
+
 .btn-primary {
   background-color: $secondary-color;
   border-color: $secondary-color;
@@ -67,6 +71,39 @@ a {
   &:hover {
     background-color: $pink-color;
     border-color: $pink-color;
+    color: $white;
+  }
+}
+.btn-secondary-outline {
+  border-color: $white;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    border-color: $white;
+    color: $main-color;
+  }
+}
+
+.btn-info {
+  background-color: $main-color;
+  border-color: $main-color;
+  color: $white;
+
+  &:hover {
+    border-color: $main-color;
+    background-color: $transparent;
+    color: $main-color;
+  }
+}
+
+.btn-info-outline {
+  border-color: $main-color;
+  color: $main-color;
+
+  &:hover {
+    background-color: $main-color;
+    border-color: $main-color;
     color: $white;
   }
 }

@@ -1,20 +1,20 @@
 .wrapper.wrapper-image style="background-image: url('img/hero.jpg');"             
   .container.text-xs-center
-    h1.m-b-12.p-t-6.inner-header-offset Login
+    h1.m-b-12.p-t-8.inner-header-offset Login
     
 .wrapper
   .container
     .row
       .col-sm-12.col-md-8.col-md-offset-2.inner-page-offset
         .container.p-a-8.bg-color-white.main-color
-          form
+          form action="http://www.platform.workamerica.co/login-servlet" method="post"
             .col-xs-12.p-a-0
               fieldset.form-group.form-group-dark
-                input.form-control type="text" autocomplete="false" placeholder="Username" required="true"
+                input.form-control type="text" autocomplete="false" placeholder="Username" required="true" name="email"
               fieldset.form-group.form-group-dark
-                input.form-control type="password" autocomplete="false" placeholder="Password"
-              .text-xs-center
+                input.form-control type="password" autocomplete="false" placeholder="Password" name="password"
+              .text-xs-center.m-b-3
                 button.btn.btn-primary type="submit"  Submit
               .text-xs-center
-                a href="http://www.workamerica.co/join-now.html"  Forgot your password?
+                a href="http://www.workamerica.co/forgot-password.html"  Forgot your password?
                           

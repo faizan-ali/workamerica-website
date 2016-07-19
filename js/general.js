@@ -1,10 +1,6 @@
 
 
 $( document ).ready(function() {
-
-
-
-
   $(".how-it-works-scroll").click(function() {
       $('html, body').animate({
           scrollTop: $("#how-it-works").offset().top

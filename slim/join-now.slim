@@ -1,6 +1,6 @@
 .wrapper.wrapper-image style="background-image: url('img/hero.jpg');"             
   .container.text-xs-center
-    h1.m-b-12.p-t-6.inner-header-offset Join Now
+    h1.m-b-12.p-t-8.inner-header-offset Join Now
     
 .wrapper
   .container
@@ -11,24 +11,29 @@
             .col-xs-6.p-l-0
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="First Name" required="true" name="firstName"
+                span.inport-error Invaid Name
             .col-xs-6.p-r-0
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true" name="lastName"
             .col-xs-12.p-a-0
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true" name="email"
+                span.inport-error Invaid Email
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="Phone Number" name="phone"
               fieldset.form-group.form-group-dark
                 input.form-control type="text" autocomplete="false" placeholder="Zip Code" required="true" name="zip"
-                input type="hidden" name="browser" value=""
-                input type="hidden" name="browserVersion" value=""
-                input type="hidden" name="os" value=""
-                input type="hidden" name="osVersion" value=""
-                input type="hidden" name="device" value=""
-                input type="hidden" name="deviceType" value=""
-                input type="hidden" name="deviceVendor" value=""
+                span.inport-error Invaid Zip Code
+                input type="hidden" name="browser" value="" id="browser"
+                input type="hidden" name="browserVersion" value="" id="browserVersion"
+                input type="hidden" name="os" value="" id="os"
+                input type="hidden" name="osVersion" value="" id="osVersion"
+                input type="hidden" name="device" value="" id="device"
+                input type="hidden" name="deviceType" value="" id="deviceType"
+                input type="hidden" name="deviceVendor" value="" id="deviceVendor"
                 input type="hidden" name="sourceWebsite" value="true"
               .text-xs-center
                 button.btn.btn-primary type="submit"  Submit
-                                
+                
+script src="https://s3-us-west-2.amazonaws.com/workamerica-public/js/ua-parser.js" type="text/javascript" 
+script src="js/ua-parser.min.js"
