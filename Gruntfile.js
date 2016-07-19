@@ -246,11 +246,11 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'index.html': ['header.html','navbar-dark.html', 'index.html', 'outer-footer.html'],
-                    'about.html': ['header-light.html', 'about.html', 'inner-footer.html'],
-                    'employers.html': ['header-light.html', 'employers.html', 'inner-footer.html'],
-                    'forgot-password.html': ['header-light.html', 'forgot-password.html', 'inner-footer.html'],
-                    'join-now.html': ['header-light.html', 'join-now.html', 'inner-footer.html'],
-                    'login.html': ['header-light.html', 'login.html', 'inner-footer.html'],
+                    'about.html': ['header.html','navbar-light.html', 'about.html', 'inner-footer.html'],
+                    'employers.html': ['header.html','navbar-light.html', 'employers.html', 'inner-footer.html'],
+                    'forgot-password.html': ['header.html','navbar-light.html', 'forgot-password.html', 'inner-footer.html'],
+                    'join-now.html': ['header.html','navbar-light.html', 'join-now.html', 'inner-footer.html'],
+                    'login.html': ['header.html','navbar-light.html', 'login.html', 'inner-footer.html'],
                     'thank-you.html': ['header.html','navbar-light.html', 'thank-you.html', 'inner-footer.html'],
                     'partners.html': ['header.html','navbar-light.html', 'partners.html', 'inner-footer.html'],
                     'privacy-policy.html': ['header.html','navbar-light.html', 'privacy-policy.html', 'inner-footer.html'],
