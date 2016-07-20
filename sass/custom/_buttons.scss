@@ -1,12 +1,13 @@
 .button-icon {
   overflow: hidden;
   display: inline-block;
+  background-color: $pink-color;
   @extend .shadow-2;
 
   .content,
   .icon {
+        color: $white;
     float: left;
-    background-color: $pink-color;
   }
 
   .content {
@@ -17,6 +18,30 @@
   .icon {
     font-size       : 30px;
     padding         : 1rem;
-    background-color: darken($pink-color, 10%);
+    background-color: rgba(0,0,0,.2);
+  }
+}
+
+.button-icon-2 {
+  overflow: hidden;
+  display: block;
+  background-color: $pink-color;
+  @extend .shadow-2;
+
+  .content,
+  .icon {
+    color: $white;
+    float: left;
+  }
+
+  .content {
+    font-size: 1.25rem;
+    padding  : 1rem 2rem;
+    margin-right: -20px;
+  }
+
+  .icon {
+    font-size       : 30px;
+    padding         : 1rem .5rem 1rem 0rem;
   }
 }
