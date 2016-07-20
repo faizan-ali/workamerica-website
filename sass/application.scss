@@ -10,13 +10,11 @@
 // Bootstrap Import
 @import "bootstrap/bootstrap";
 
-
-
 // Utility Styles
 @import "utility/imports";
 @import "utility/mixins/navbar";
 @import "utility/general";
-//
+
 // // Custome Components
 @import "components/wrapper";
 @import "components/navbar";
@@ -25,4 +23,5 @@
 @import "components/footer";
 @import "components/button";
 @import "components/table";
+@import "custom/buttons";
 @import "custom/index";

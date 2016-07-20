@@ -32,6 +32,10 @@ $navbar-height: 80px;
           line-height: $navbar-height;
           padding-top: 0px;
           padding-bottom: 0px;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
         .nav-link {

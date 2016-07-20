@@ -277,7 +277,7 @@ module.exports = function (grunt) {
 
             slimConcat: {
                 files: 'slim/{,*/}*.slim',
-                tasks: ['clean:html', 'slim:dev', 'concat:dist']
+                tasks: ['newer:slim:dev', 'newer:concat:dist']
             }
         }
     });

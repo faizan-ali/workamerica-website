@@ -1,0 +1,22 @@
+.button-icon {
+  overflow: hidden;
+  display: inline-block;
+  @extend .shadow-2;
+
+  .content,
+  .icon {
+    float: left;
+    background-color: $pink-color;
+  }
+
+  .content {
+    font-size: 1.25rem;
+    padding  : 1rem 2rem;
+  }
+
+  .icon {
+    font-size       : 30px;
+    padding         : 1rem;
+    background-color: darken($pink-color, 10%);
+  }
+}
