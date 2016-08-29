@@ -1,0 +1,276 @@
+//////////////////////////////////////////////////////////////////
+// SECTION
+.section {
+  width              : 100%;
+  background-color   : $bg-clr-bse;
+  color              : $fnt-clr-bse;
+  padding            : $spcr-20 0;
+
+  // IMAGE POSITIONING
+  background-position: center;
+  background-size    : cover;
+  overflow           : hidden;
+
+  //////////////////////////////////////////////////////////////////
+  /// SECTION GENERAL
+
+  &-light {
+    background-color: $bg-clr-lit;
+    color           : $fnt-clr-lit;
+  }
+
+  &-dark {
+    background-color: $bg-clr-drk;
+    color           : $fnt-clr-drk;
+  }
+
+  .section-header {
+    margin-bottom: $spcr-12;
+
+    .section-title-pri {
+      font-size    : $ttl-fnt-sz-nm;
+      margin-bottom: $spcr-4;
+    }
+
+    .section-title-sec {
+      font-size: $para-fnt-sz-lg;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+//// SECTION HERO
+.section-hero {
+  padding-bottom: 0;
+
+  .section-header {
+    .section-title-pri {
+      font-size     : $ttl-fnt-sz-lg;
+      margin-bottom : $spcr-6;
+      padding-bottom: $spcr-6;
+      border-bottom : 1px solid $gry-lit;
+      font-weight: 200;
+    }
+
+    .section-title-sec {
+      font-size    : 1.75rem;
+      margin-bottom: $spcr-18;
+      font-weight: 200;
+    }
+  }
+
+  .hero-col-right {
+    img {
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+}
+
+.section-hire {
+  padding   : $spcr-8;
+  text-align: center;
+
+  a,
+  p {
+    display    : inline-block;
+    font-weight: 300;
+  }
+
+  a {
+    padding        : 0 0.25rem;
+    color          : $clr-fcs-bse;
+    text-decoration: underline;
+  }
+
+}
+
+.section-form {
+  .section-header {
+    margin-bottom: 0;
+
+    .section-title-pri {
+      margin-bottom : 0;
+      padding-bottom: 0;
+    }
+
+    .section-title-sec {
+      font-size    : $ttl-fnt-sz-sm;
+      margin-bottom: $spcr-18;
+    }
+  }
+
+  .hero-col-right {
+    img {
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+}
+
+.section-footer {
+  background-color: $clr-pri-drk;
+
+  .section-header {
+    margin-bottom: 1rem;
+
+    .section-title-pri {
+      font-size     : $para-fnt-sz-xs;
+      font-weight   : $fnt-wt-bld;
+      text-transform: uppercase;
+      color         : $gry-lit;
+      letter-spacing: 2px;
+      margin-bottom : $spcr-2;
+      padding-bottom: $spcr-2;
+      border-bottom : 1px solid $gry-lit;
+    }
+  }
+
+  .footer-desc {
+    list-style : none;
+    font-size  : 1.25rem;
+    line-height: $ln-ht-nm;
+
+    a {
+      font-size    : $para-fnt-sz-sm;
+      margin-bottom: $spcr-1;
+      display      : inline-block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.section-inner {
+  .section-paragraph {
+    margin-bottom: $spcr-8;
+
+    .section-title {
+      font-size: $ttl-fnt-sz-nm;
+      margin-bottom: $spcr-4;
+    }
+
+    .section-subtitle {
+      font-weight  : 300;
+      font-size: $para-fnt-sz-lg;
+      margin-bottom: $spcr-2;
+    }
+
+    .section-desc {
+      line-height: $ln-ht-nm;
+    }
+  }
+}
+
+.section-copyright {
+  background-color: black;
+  padding         : $spcr-8 0;
+
+  .links {
+    display       : inline-block;
+    vertical-align: middle;
+    font-size     : $para-fnt-sz-sm;
+
+    li {
+      height      : 15px;
+      display     : inline-block;
+      margin-right: 2rem;
+    }
+  }
+
+  .social-media {
+    display       : inline-block;
+    vertical-align: middle;
+
+    li {
+      display     : inline-block;
+      margin-right: 0.5rem;
+      height      : 15px;
+      width       : 30px;
+
+      img {
+        height : 15px;
+        margin : 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+// SECTION RESPONSIVE
+
+////////////////////////////////////////////////////////////////
+//// SECTION RESPONSIVE HORIZONTAL
+
+//////////////////////////////////////////////////////////////////
+// SECTION HERO RESPONSIVE
+//////////////////////////////////////////////////////////////////
+// SECTION HERO RESPONSIVE HORIZONTAL
+.section-hero {
+  @include bp-dwn-x(lg) {
+    padding: $spcr-20 0;
+
+    .hero-col-left {
+      text-align: center;
+    }
+
+    .hero-col-right {
+      display: none;
+    }
+  }
+}
+
+.section-inner {
+  @include bp-dwn-x(lg) {}
+}
+
+.section-copyright {
+  @include bp-dwn-x(sm) {
+    .links {
+      width        : 100%;
+      margin-bottom: $spcr-4;
+
+      li {
+        text-align   : center;
+        margin-bottom: $spcr-4;
+        width        : 100%;
+
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .social-media {
+      width: 100%;
+
+      li {
+        width : 33.3%;
+        margin: 0;
+
+      }
+    }
+  }
+}
+
+.section {
+  @include bp-dwn-x(lg) {
+    .sm-br {
+      margin-bottom: $spcr-8;
+    }
+  }
+  @include bp-dwn-x(md) {
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+strong {
+  font-weight: 400;
+}

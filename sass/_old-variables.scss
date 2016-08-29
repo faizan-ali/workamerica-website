@@ -1,0 +1,266 @@
+//////////////////////////////////////////////////////////////////
+// SPACING
+$spacer-1                 : 0.25rem;
+$spacer-2                 : 0.50rem;
+$spacer-3                 : 0.75rem;
+$spcr-root                 : 1.00rem;
+$spacer-5                 : 1.25rem;
+$spacer-6                 : 1.50rem;
+$spacer-7                 : 1.75rem;
+$spcr-root                 : 2.00rem;
+$spacer-9                 : 2.25rem;
+$spacer-10                : 2.50rem;
+$spacer-11                : 2.75rem;
+$spacer-12                : 3.00rem;
+$spacer-13                : 3.25rem;
+$spacer-14                : 3.50rem;
+$spacer-15                : 3.75rem;
+$spacer-16                : 4.00rem;
+
+$spacer-y-xs              : $spacer-2;
+$spacer-y-sm              : $spcr-root;
+$spacer-y-md              : $spcr-root;
+$spacer-y-lg              : $spacer-10;
+$spacer-y-xl              : $spacer-12;
+
+$spacer-x-xs              : $spacer-1;
+$spacer-x-sm              : $spacer-3;
+$spacer-x-md              : $spacer-5;
+$spacer-x-lg              : $spacer-7;
+$spacer-x-xl              : $spacer-9;
+
+//////////////////////////////////////////////////////////// COLOR
+///////////////////////////////////////////// COLOR THEME
+///////////////////////// COLOR THEME PRI
+$clr-pri-bse   : #00304F;
+$clr-pri-lit   : lighten($clr-pri-bse, 5%);
+$clr-pri-drk   : darken($clr-pri-bse, 5%);
+/////// COLOR SITE THEME SEC
+$clr-sec-bse   : #00AEEF;
+$clr-sec-lit   : lighten($clr-sec-bse, 5%);
+$clr-sec-drk   : darken($clr-sec-bse, 5%);
+/////// COLOR SITE THEME FCS
+$clr-fcs-bse   : #EC008C;
+$clr-fcs-lit   : lighten($clr-fcs-bse, 5%);
+$clr-fcs-drk   : darken($clr-fcs-bse, 5%);
+///////////////////////// COLOR BASE
+/////////////// COLOR BASE GRAY
+$gry-bse       : #55595C;
+$wht           : #FFFFFF;
+$gry-litest    : #FAFAFA;
+$gry-liter     : #ECEEEF;
+$gry-lit       : #818a91;
+$gry-dark       : #373A3C;
+$gry-darkest    : #333333;
+$blk           : #000000;
+
+
+//////////////////////////////////////////////////////////////////
+// BORDER
+/// BORDER SIZE
+$bdr-sz-sm                : 1px;
+$bdr-sz-md                : 2px;
+$bdr-sz-lg                : 5px;
+$bdr-sz-root              : $bdr-sz-sm;
+/// BORDER RADIUS
+$bdr-radius               : 0;
+
+//////////////////////////////////////////////////////////////////
+// TYPE
+/// TYPE SIZING
+//// TYPE SIZING ROOT
+$fnt-sz-root              : 16px;
+//// TYPE SIZING BASE
+$fnt-sz-base              : 1rem;
+$fnt-sz-lg                : 1.25rem;
+$fnt-sz-sm                : 0.875rem;
+$fnt-sz-xs                : 0.75rem;
+//// TYPE SIZING HEADING
+$fnt-sz-h1                : 2.25rem;
+$fnt-sz-h2                : 2rem;
+$fnt-sz-h3                : 1.75rem;
+$fnt-sz-h4                : 1.5rem;
+$fnt-sz-h5                : 1.25rem;
+$fnt-sz-h6                : 1rem;
+//// TYPE SIZING DISPLAY
+$fnt-sz-display-1         : 5rem;
+$fnt-sz-display-2         : 4.5rem;
+$fnt-sz-display-3         : 4rem;
+$fnt-sz-display-4         : 3.5rem;
+$fnt-sz-display-5         : 3rem;
+$fnt-sz-display-6         : 2.5rem;
+//// TYPE SIZING ELEMENTS
+$hding-fnt-sz-xl          : 3.50rem;
+$hding-fnt-sz-lg          : 3.00rem;
+$hding-fnt-sz-nm          : 2.50rem;
+$hding-fnt-sz-sm          : 2.00rem;
+
+$typ-fnt-sx-xl            : 1.50rem;
+$typ-fnt-sz-lg            : 1.25rem;
+$typ-fnt-sz-nm            : 1.00rem;
+$typ-fnt-sz-sm            : 0.75rem;
+
+/// TYPE FAMILY
+$fnt-fam-pri              : "Helvetica Neue", "Open Sans", arial;
+/// TYPE LINE HEIGHT
+$line-ht-sm               : 1.00;
+$line-ht-md               : 1.50;
+$line-ht-lg               : 1.75;
+$line-ht-base             : $line-ht-md;
+/// TYPE WEIGHT
+$fnt-wt-light             : 200;
+$fnt-wt-nm               : 300;
+$fnt-wt-bold              : 400;
+/// TYPE COLOR
+$fnt-clr-pri              : $gry-darkest;
+$fnt-clr-sec              : $clr-pri-base;
+$fnt-clr-tir              : $gry-dark;
+
+
+
+//////////////////////////////////////////////////////////////////
+/// ELEMENT
+//// ELEMENT LIGHT
+$elt-bg-clr-light         : $gry-lit;
+$elt-bg-clr-base          : #FFFFFF;
+$elt-bg-clr-dark          : $clr-pri-base;
+///// ELEMENT COLORS TYPE
+$elt-fnt-clr-light        : $fnt-clr-pri;
+$elt-fnt-clr-base         : $fnt-clr-pri;
+$elt-fnt-clr-dark         : #FFFFFF;
+
+//////////////////////////////////////////////////////////////////
+// NAVBAR
+$$gry-liter               : $gry-liter;
+/// NAVBAR SPACING
+$nb-item-margin-x         : $spcr-root;
+$nb-link-padding-x        : $spacer-2;
+$nb-link-hover-clr        : $clr-sec-base;
+/// NAVBAR PRIMARY
+$nb-pri-ht                : 4.5rem;
+$nb-pri-link-ht           : 2rem;
+$nb-pri-img-ht            : 1.5rem;
+$nb-pri-bg-clr            : #FFFFFF;
+$nb-pri-clr               : $gry-base;
+/// NAVBAR SECONDARY
+$nb-sec-ht                : 30px;
+$nb-sec-bg-clr            : $gry-litest;
+$nb-sec-clr               : $clr-pri-base;
+$nb-sec-font-sz           : $fnt-sz-xs;
+/// NAVBAR MOBILE
+$nb-mobile-link-clr       : $clr-pri-light;
+$nb-mobile-bg-clr         : $clr-pri-base;
+$nb-mobile-row-clr        : $clr-pri-dark;
+
+//////////////////////////////////////////////////////////////////
+// BREAKPOINTS
+/// BREAKPOINTS HORIZONTAL
+$bp-xs-x          : 0;
+$bp-sm-x          : 544px; /////
+$bp-md-x          : 768px; //
+$bp-lg-x          : 992px;
+$bp-xl-x          : 1200px;
+// TODO: $bp-xl-x: 1280px
+// TODO: $bp-xxl-x: 1440px
+/// BREAKPOINTS VERTICAL
+$bp-xs-y          : 0; // 325px
+$bp-sm-y          : 320px;
+$bp-md-y          : 450px;
+$bp-lg-y          : 600px;
+$bp-xl-y          : 750px;
+
+//////////////////////////////////////////////////////////////////
+// CONTAINER
+$container-padding-x      : 0;
+$container-padding-y      : 1rem;
+
+//////////////////////////////////////////////////////////////////
+// BUTTON
+/// BUTTON COLORS
+$btn-pri-clr              : $clr-pri-base;
+$btn-sec-clr              : $clr-sec-base;
+$btn-fcs-clr              : $clr-fcs-base;
+/// BUTTON SIZING
+$btn-sm-padding-x         : $spacer-1;
+$btn-sm-padding-y         : $spacer-2;
+$btn-md-padding-x         : $spacer-3;
+$btn-md-padding-y         : $spcr-root;
+$btn-lg-padding-x         : $spacer-5;
+$btn-lg-padding-y         : $spacer-6;
+
+//////////////////////////////////////////////////////////////////
+// SECTION
+/// SECTION COLOR
+$section-bg-light         : $gry-litest;
+$section-bg-dark          : $clr-pri-base;
+$section-title-sec-clr    : $gry-liter;
+/// SECTION SPACING
+$section-padding-y        : $spacer-16;
+$section-offset-top-lg    : calc(100vh - ( #{$nb-pri-ht} + #{$nb-sec-ht} ));
+$section-offset-top-xs    : calc(100vh - #{$nb-pri-ht});
+/// SECTION TYPE
+//// SECTION TYPE SPACING
+$section-header-margin-btm: $spacer-16;
+$section-title-margin-btm : $spacer-2;
+//// SECTION TYPE SIZING
+$section-title-pri-font-sz: $fnt-sz-display-6;
+$section-title-sec-font-sz: $fnt-sz-h5;
+//// SECTION TYPE WEIGHT
+$section-title-font-wt    : $fnt-wt-light;
+/// SECTION HERO
+$hero-padding-y           : $section-padding-y * 1.5;
+$hero-header-margin-btm   : $spacer-12;
+$hero-title-margin-btm    : $spacer-7;
+$hero-title-padding-btm   : $hero-title-margin-btm;
+$hero-title-pri-font-sz   : $fnt-sz-display-4;
+$hero-title-sec-font-sz   : $fnt-sz-h2;
+$hero-title-pri-bdr-clr   : $gry-lit;
+$hero-title-font-wt       : $fnt-wt-light;
+
+//////////////////////////////////////////////////////////////////
+//  CARD
+/// CARD SPACING
+$card-padding-x           : $spcr-root;
+$card-padding-y           : $spcr-root;
+$card-title-margin-btm    : $spacer-2;
+/// CARD TYPE
+//// CARD TYPE SIZING
+$card-title-font-sz       : $fnt-sz-h4;
+$card-desc-font-sz        : $fnt-sz-base;
+$card-title-font-wt       : $fnt-wt-light;
+$card-desc-font-wt        : $fnt-wt-light;
+$card-desc-line-ht        : $line-ht-lg;
+/// CARD IMAGE
+$card-image-padding-x     : $spcr-root;
+$card-image-padding-y     : $spcr-root;
+
+//////////////////////////////////////////////////////////////////
+// FORM
+/// FORM COLOR
+$form-bg-light            : $elt-bg-clr-light;
+$form-bg-dark             : $elt-bg-clr-dark;
+$form-clr-light           : $fnt-clr-pri;
+$form-clr-dark            : #FFFFFF;
+/// FORM SPACING
+$form-title-margin-btm    : $spcr-root;
+$form-input-margin-btm    : $spacer-10;
+$form-input-padding       : $spacer-1;
+$form-padding-x           : $spcr-root;
+$form-padding-y           : $spcr-root;
+/// FORM TYPE
+//// FORM TYPE SIZING
+$form-title-font-sz       : $fnt-sz-h3;
+$form-desc-font-sz        : $fnt-sz-h5;
+$form-input-font-sz       : $fnt-sz-h6;
+//// FORM TYPE WEIGHT
+$form-title-font-wt       : $fnt-wt-light;
+$form-desc-font-wt        : $fnt-wt-light;
+$form-input-font-wt       : $fnt-wt-light;
+
+//////////////////////////////////////////////////////////////////
+// Z-INDEX
+$z-index-fixed            : 1000;
+
+//////////////////////////////////////////////////////////////////
+// RANDOM
+$drop-shadow              : 2.463px 3.152px 3.64px 0.36px rgba(0, 0, 0, 0.23);

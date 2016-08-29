@@ -51,8 +51,24 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'css', src: '*.min.css', dest: 'css'},
                     {expand: true, cwd: 'img', src: '**', dest: 'img'},
                     {expand: true, cwd: '', src: '*.html', dest: '/'},
-                    {expand: true, cwd: 'js', src: '*.min.js', dest: 'js'}
+                    {expand: true, cwd: 'js', src: '*.min.js', dest: 'js'},
+                    {expand: true, cwd: 'fonts', src: '**', dest: 'fonts'}
                 ]
+            },
+            stage: {
+              options: {
+                  differential: true,
+                  bucket: 'website-stage.workamerica.co',
+              },
+              // Grabs all HTML and minified CSS & JS files and deploys to root for HTML, css for CSS,
+              // js for JS, and img for images
+              files: [
+                  {expand: true, cwd: 'css', src: '*.min.css', dest: 'css'},
+                  {expand: true, cwd: 'img', src: '**', dest: 'img'},
+                  {expand: true, cwd: '', src: '*.html', dest: '/'},
+                  {expand: true, cwd: 'js', src: '*.min.js', dest: 'js'},
+                  {expand: true, cwd: 'fonts', src: '**', dest: 'fonts'}
+              ]
             }
         },
 
@@ -97,7 +113,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: ['**/*.scss', '!bootstrap/*.*'],
+                    src: '**/*.scss',
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -109,7 +125,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'sass',
-                    src: '{,*/}*.scss',
+                    src: '**/*.scss',
                     dest: 'css',
                     ext: '.css'
                 }]
@@ -247,17 +263,16 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 files: {
-                    'index.html': ['header.html','navbar-dark.html', 'hero.html', 'connect.html', 'how-it-works.html','how-can-we-help.html', 'what-customers-are-saying.html','social-proof.html', 'outer-footer.html'],
-                    'about.html': ['header.html','navbar-light.html', 'about.html', 'inner-footer.html'],
-                    'employers.html': ['header.html','navbar-light.html', 'employers.html', 'inner-footer.html'],
-                    'forgot-password.html': ['header.html','navbar-light.html', 'forgot-password.html', 'inner-footer.html'],
-                    'join-now.html': ['header.html','navbar-light.html', 'join-now.html', 'inner-footer.html'],
-                    'login.html': ['header.html','navbar-light.html', 'login.html', 'inner-footer.html'],
-                    'thank-you.html': ['header.html','navbar-light.html', 'thank-you.html', 'inner-footer.html'],
-                    'partners.html': ['header.html','navbar-light.html', 'partners.html', 'inner-footer.html'],
-                    'privacy-policy.html': ['header.html','navbar-light.html', 'privacy-policy.html', 'inner-footer.html'],
-                    'terms-and-conditions.html': ['header.html','navbar-light.html', 'terms-and-conditions.html', 'inner-footer.html'],
-                    'invalid.html': ['header.html','navbar-light.html', 'invalid.html', 'inner-footer.html']
+                    'index.html': ['header.html','navbar.html', 'home.html', 'footer.html','navbar-mobile.html'],
+                    'about.html': ['header.html','navbar.html', 'about-inner.html', 'footer.html','navbar-mobile.html'],
+                    'employers.html': ['header.html','navbar.html', 'employers-inner.html', 'footer.html','navbar-mobile.html'],
+                    'partners.html': ['header.html','navbar.html', 'partners-inner.html', 'footer.html','navbar-mobile.html'],
+                    'join-now.html': ['header.html','navbar.html', 'join-inner.html', 'footer.html','navbar-mobile.html'],
+                    'login.html': ['header.html','navbar.html', 'login-inner.html', 'footer.html','navbar-mobile.html'],
+                    'thank-you.html': ['header.html','navbar.html', 'thanks-inner.html', 'footer.html','navbar-mobile.html'],
+                    'forgot-password.html': ['header.html','navbar.html', 'forgot-password-inner.html', 'footer.html','navbar-mobile.html'],
+                    'terms-and-conditions.html': ['header.html','navbar.html', 'terms-and-conditions-inner.html', 'footer.html','navbar-mobile.html'],
+                    'privacy-policy.html': ['header.html','navbar.html', 'privacy-policy-inner.html', 'footer.html','navbar-mobile.html']
                 }
             }
         },
@@ -271,12 +286,12 @@ module.exports = function (grunt) {
               tasks: ['uglify']
             },
             sass: {
-                files: 'sass/{,*/}*.scss',
+                files: 'sass/**/*.scss',
                 tasks: ['sass:dev', 'cssmin']
             },
 
             slimConcat: {
-                files: 'slim/{,*/}*.slim',
+                files: 'slim/**/*.slim',
                 tasks: ['newer:slim:dev', 'newer:concat:dist']
             }
         }
@@ -284,6 +299,7 @@ module.exports = function (grunt) {
 
 // Default task.
     grunt.registerTask('dev', ['clean:all', 'slim:dev', 'sass:dev', 'postcss', 'concat', 'jshint', 'uglify', 'cssmin']);
-    grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3']);
+    grunt.registerTask('stage', ['slim:dev','sass:dist', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3:stage']);
+    grunt.registerTask('dist', ['slim:dev','sass:dist', 'postcss', 'concat', 'htmllint', 'jshint', 'scsslint', 'uglify', 'cssmin', 'aws_s3:production']);
 
 };

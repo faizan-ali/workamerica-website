@@ -1,0 +1,21 @@
+.section.section-form
+  .container
+    .row
+      .container
+        .col-md-8.col-md-offset-2
+          .section-header.text-center
+            .section-title-pri Login
+          .form
+            form action="https://www.platform.workamerica.co/login-servlet" method="post"
+              .text-center.m-b-4
+                .form-error#general-error.hide Your e-mail address or password was invalid.
+                .form-error#bad-error.hide An error has occurred. Please try again.
+              .col-xs-12.p-a-0
+                fieldset.form-group.form-group-dark
+                  input.form-control type="text" autocomplete="false" placeholder="Email Address or Phone Number" required="true" name="email"
+                fieldset.form-group.form-group-dark
+                  input.form-control type="password" autocomplete="false" placeholder="Password" name="password"
+                .text-center.m-b-8
+                  button.btn.btn-fcs.btn-sm type="submit"  Submit
+                .text-center
+                  a href="https://www.workamerica.co/forgot-password.html" Forgot your password?

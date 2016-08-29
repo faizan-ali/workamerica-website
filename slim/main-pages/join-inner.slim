@@ -1,0 +1,43 @@
+    
+.section.section-form
+  .container
+    .row
+      .container
+        .col-md-8.col-md-offset-2
+          .section-header.text-center
+            .section-title-pri Join Now
+          .form
+            form action="https://www.platform.workamerica.co/candidate-register" method="post"
+              .text-center.m-b-4
+                .form-error#bad-error.hide An error has occurred. Please try again.
+                .form-error#exists-error.hide An account with this information already exists.
+              .col-xs-6
+                fieldset.form-group
+                  input.form-control type="text" autocomplete="false" placeholder="First Name" required="true" name="firstName"
+                  .form-error#name-error.hide Invaid name
+              .col-xs-6
+                fieldset.form-group
+                  input.form-control type="text" autocomplete="false" placeholder="Last Name" required="true" name="lastName"
+              .col-xs-12
+                fieldset.form-group
+                  input.form-control type="text" autocomplete="false" placeholder="Email Address" required="true" name="email"
+                  .form-error#email-error.hide Invalid email address
+                fieldset.form-group
+                  input.form-control type="text" autocomplete="false" placeholder="Phone Number" required="true" name="phone"
+                  .form-error#phone-error.hide Invalid phone number
+                fieldset.form-group
+                  input.form-control type="text" autocomplete="false" placeholder="Zip Code" required="true" name="zip"
+                  .form-error#zip-error.hide Invalid zip code
+                  input type="hidden" name="browser" value="" id="browser"
+                  input type="hidden" name="browserVersion" value="" id="browserVersion"
+                  input type="hidden" name="os" value="" id="os"
+                  input type="hidden" name="osVersion" value="" id="osVersion"
+                  input type="hidden" name="device" value="" id="device"
+                  input type="hidden" name="deviceType" value="" id="deviceType"
+                  input type="hidden" name="deviceVendor" value="" id="deviceVendor"
+                  input type="hidden" name="sourceWebsite" value="true"
+                .text-center
+                  button.btn.btn-fcs.btn-sm type="submit"  Submit
+                
+
+script src="js/ua-parser.min.js"

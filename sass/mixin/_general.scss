@@ -1,0 +1,57 @@
+@mixin btn-line-ht($parent-ht, $bdr-sz) {
+  line-height: calc( #{$parent-ht} - ( #{$bdr-sz} ));
+}
+@mixin vrt-cnt($parent-ht, $div-ht) {
+  padding-top   : calc((#{$parent-ht} - #{$div-ht}) / 2);
+  padding-bottom: calc((#{$parent-ht} - #{$div-ht}) / 2);
+}
+@mixin btn-var($btn-bg-clr, $btn-bdr-wt: $bdr-sz-root) {
+  color           : #FFFFFF;
+  background-color: $btn-bg-clr;
+  border          : $btn-bdr-wt solid $btn-bg-clr;
+
+  &:hover {
+    color           : $btn-bg-clr;
+    background-color: transparent;
+    border          : $btn-bdr-wt solid $btn-bg-clr;
+  }
+
+  &-outline {
+    color           : $btn-bg-clr;
+    background-color: transparent;
+    border          : $btn-bdr-wt solid $btn-bg-clr;
+
+    &:hover {
+      color           : #FFFFFF;
+      background-color: $btn-bg-clr;
+    }
+  }
+}
+
+@mixin nav-menu($nb-ht, $nb-itm-ht, $fnt-sz) {
+  .nav-menu {
+    height: $nb-ht;
+
+    .nav-item {
+      height: $nb-ht;
+      @include vrt-cnt($nb-ht, $nb-itm-ht);
+
+      & + .nav-item {
+        margin-left: $spcr-4;
+      }
+
+      .nav-btn,
+      .nav-link {
+        line-height  : $nb-itm-ht;
+        height       : $nb-itm-ht;
+        font-size    : $fnt-sz;
+        padding-left : $nb-itm-ht - ($fnt-sz * 2);
+        padding-right: $nb-itm-ht - ($fnt-sz * 2);
+
+        &.material-icons {
+          font-size: $fnt-sz * 2;
+        }
+      }
+    }
+  }
+}

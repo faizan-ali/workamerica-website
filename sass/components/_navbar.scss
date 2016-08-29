@@ -1,68 +1,109 @@
-$navbar-height: 80px;
-
+//////////////////////////////////////////////////////////////////
+// NAVBAR GENERAL
 .navbar {
-    padding: 0px;
-    margin-bottom: - $navbar-height;
+  width           : 100%;
+  border-bottom   : $bdr-sz-root $gry-liter solid;
+  font-weight: $fnt-wt-bld;
+  // BASE COLOR
+  background-color: $bg-clr-bse;
+  color           : $fnt-clr-bse;
 
-    &.navbar-transparent {
-      background-color: $transparent;
-      color: $white;
+  // LIGHT COLOR
+  &-light {
+    background-color: $bg-clr-lit;
+    color           : $fnt-clr-lit;
+  }
+
+  // DARK COLOR
+  &-dark {
+    background-color: $bg-clr-drk;
+    color           : $fnt-clr-drk;
+  }
+
+  .nav-menu {
+    list-style: none;
+    display   : inline-block;
+
+    .nav-item {
+      display       : inline-block;
+      vertical-align: center;
+
+      .nav-link {
+        display: block;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+// NAVBAR PRIMARY
+.navbar-pri {
+  height: $nb-pri-ht;
+  @include nav-menu($nb-pri-ht, $nb-pri-itm-ht, $para-fnt-sz-sm);
+
+  .nav-menu {
+    .nav-brand {
+      img {
+        @include vrt-cnt($nb-pri-itm-ht, $nb-pri-logo-ht);
+      }
     }
 
-    &.navbar-white {
-      background-color: $white;
-      color: $main-color-darkest;
-    }
+    .nav-item {
+      &#nb-pri-btn {
+        margin-left: $spcr-16;
 
-    .navbar-toggler {
-      height: $navbar-height;
-      line-height: $navbar-height;
-      padding: 0px;
-      font-size: 2em;
-    }
-
-    .navbar-nav {
-      padding: 0px;
-      height: $navbar-height;
-
-      .nav-item {
-        height: $navbar-height;
-
-        .nav-link, .navbar-brand {
-          line-height: $navbar-height;
-          padding-top: 0px;
-          padding-bottom: 0px;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-
-        .nav-link {
-          font-size: $font-size-sm;
-        }
-
-        .navbar-brand {
-          font-size: $font-size-lg;
+        .btn {
+          font-size: $para-fnt-sz-xs;
         }
       }
     }
-}
-
-#mobile-nav {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-color: $main-color;
-  z-index: 10;
-  display: none;
-
-
-  ul li a {
-    color: $white;
   }
 
-  li {
-    padding: 1rem 0;
+}
+
+//////////////////////////////////////////////////////////////////
+// NAVBAR SECONDARY
+.navbar-sec {
+  height: $nb-sec-ht;
+  @include nav-menu($nb-sec-ht, $spcr-6, $para-fnt-sz-xs);
+}
+
+//////////////////////////////////////////////////////////////////
+// NAVBAR RESPONSIVE
+@include bp-up-x(lg) {
+  #navbar-pri-navicon {
+    display: none;
   }
 }
+@include bp-dwn-x(lg) {
+  #nb-pri {
+    position: fixed;
+    z-index : $z-idx-fxt;
+    top     : 0;
+  }
+
+  .navbar-spacer {
+    width: 100%;
+    height: $nb-pri-ht;
+  }
+}
+@include bp-dwn-x(lg) {
+  #nb-pri-btn,
+  #nb-pri-nav,
+  #nb-sec {
+    display: none;
+  }
+
+}
+
+// //////////////////////////////////////////////////////////////////
+// // NAVBAR UTIL
+// .navbar-spacer {
+//   width: 100%;
+//   @include bp-up-x(lg) {
+//     height: 0;
+//   }
+//   @include bp-down-x(lg) {
+//     height: $nb-pri-ht;
+//   }
+// }

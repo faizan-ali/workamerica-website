@@ -1,27 +1,29 @@
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-}
-
-// Variables
+//////////////////////////////////////////////////////////////////
+// BASELINE
+@import "utility/baseline/function";
+// VARIABLES
+// @import "old-variables";
 @import "variables";
-
-// Bootstrap Import
-@import "bootstrap/bootstrap";
-
-// Utility Styles
+//////////////////////////////////////////////////////////////////
+// MIXINS
+@import "mixin/media-queries";
+@import "mixin/general";
+//////////////////////////////////////////////////////////////////
+// UTILITY
 @import "utility/imports";
-@import "utility/mixins/navbar";
+@import "utility/reset";
+@import "utility/responsive";
 @import "utility/general";
 
-// // Custome Components
-@import "components/wrapper";
+//////////////////////////////////////////////////////////////////
+// COMPONENTS
+/// COMPONENTS GENERAL
+@import "components/general/section";
+@import "components/general/button";
+@import "components/general/form";
+@import "components/general/card";
+/// COMPONENTS INNER AND OUTER
 @import "components/navbar";
-@import "components/card";
-@import "components/form";
-@import "components/footer";
-@import "components/button";
-@import "components/table";
-@import "custom/buttons";
-@import "custom/index";
+@import "components/navbar-mobile";
+/// COMPONENTS OUTER
+/// COMPONENTS INNER

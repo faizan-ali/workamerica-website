@@ -1,0 +1,105 @@
+.card {
+  background-color   : $bg-clr-bse;
+  color              : $fnt-clr-bse;
+
+  &-light {
+    background-color: $bg-clr-lit;
+    color           : $fnt-clr-lit;
+  }
+
+  &-dark {
+    background-color: $bg-clr-drk;
+    color           : $fnt-clr-drk;
+  }
+}
+
+.card {
+  padding: $spcr-4;
+}
+
+.min-ht-230 {
+  max-height: 230px;
+}
+
+.card {
+  @include bp-dwn-x(md) {
+    margin-bottom: $spcr-12;
+  }
+
+  .card-block {
+    .card-title {
+      font-size     : $para-fnt-sz-lg;
+      margin-bottom: $spcr-1;
+
+      &-lg {
+        margin-bottom: $spcr-4;
+        font-size     : $para-fnt-sz-lg;
+      }
+    }
+
+    .card-desc {
+      font-size: $para-fnt-sz-nm;
+      line-height: $ln-ht-nm;
+    }
+  }
+
+  &-img-top {
+    .card-image {
+      padding   : 0 2rem 2rem 2rem 0;
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-img-left {
+    overflow: hidden;
+    padding : $spcr-6;
+
+    div[class^="col"] {
+      padding: 0;
+    }
+
+    .card-img {
+      text-align   : center;
+      padding: 0 $spcr-3 0 $spcr-3;
+      img {
+        width : 100%;
+        margin: 0 auto;
+        max-width: 120px;
+        max-height: 120px;
+      }
+    }
+
+    .card-block {
+      padding-left: $spcr-5;
+    }
+
+    .card-block {
+
+    }
+
+    @include bp-dwn-x(lg) {
+      margin-bottom: $spcr-8;
+    }
+
+    @include bp-dwn-x(md) {
+      text-align: center;
+      .card-img {
+        padding: .5rem $spcr-6 1.5rem $spcr-6;
+      }
+
+
+      .card-block {
+        padding-left: 0;
+      }
+    }
+    @include bp-dwn-x(sm) {
+      .card-img {
+          padding: 0 $spcr-6 1rem $spcr-6;
+      }
+    }
+  }
+}

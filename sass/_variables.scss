@@ -1,18 +1,136 @@
-$transparent: rgba(0, 0, 0, 0);
-$white: #fff;
-$black: #000;
+///////////////////////////////////////////////////////////////////////////
+// BASELINE VARIABLES
+///////////////////////////////////////////////////////////////////////////
 
-// $font-family-sans-serif:     "Helvetica Neue", "Open Sans", Arial, sans-serif !default;
-$secondary-color: #00bff3;
-$pink-color: #ec008c;
-$main-color: #003050;
-$main-color-darkest: #001626;
-$link-color: inherit;
-$link-hover-color: inherit;
+////////////////////////////////////////////////// COLOR
+//////////////////////////////////////// COLOR THEME
+////////////////////////////// COLOR THEME PRI
+$clr-pri-bse    : #00304F;
+$clr-pri-lit    : lighten($clr-pri-bse, 5%);
+$clr-pri-drk    : darken($clr-pri-bse, 5%);
+////////////////////////////// COLOR SITE THEME SEC
+$clr-sec-bse    : #00AEEF;
+$clr-sec-lit    : lighten($clr-sec-bse, 5%);
+$clr-sec-drk    : darken($clr-sec-bse, 5%);
+////////////////////////////// COLOR SITE THEME FCS
+$clr-fcs-bse    : #EC008C;
+$clr-fcs-lit    : lighten($clr-fcs-bse, 5%);
+$clr-fcs-drk    : darken($clr-fcs-bse, 5%);
 
-$navbar-height: 80px;
+//////////////////////////////////////// COLOR BASE
+////////////////////////////// COLOR BASE GRAY
+$gry-bse        : #55595C;
+$wht            : #FFFFFF;
+$gry-litest     : #FAFAFA;
+$gry-liter      : #ECEEEF;
+$gry-lit        : #818a91;
+$gry-drk        : #373A3C;
+$gry-drkest     : #333333;
+$blk            : #000000;
 
-$border-width: 2px ;
-$border-radius:          .0;
-$border-radius-lg:       .0;
-$border-radius-sm:       .0;
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// TYPE
+//////////////////////////////////////// TYPE FAMILY
+$fnt-fam-pri    : "Open Sans", arial;
+//////////////////////////////////////// TYPE SIZE
+////////////////////////////// TYPE SIZE ROOT
+$fnt-sz-root    : 16.00px;
+////////////////////////////// TYPE SIZE HEADING
+$ttl-fnt-sz-root: 2.50rem;
+$ttl-fnt-sz-xl  : 3.50rem;
+$ttl-fnt-sz-lg  : 3.00rem;
+$ttl-fnt-sz-nm  : 2.50rem;
+$ttl-fnt-sz-sm  : 2.00rem;
+////////////////////////////// TYPE SIZE PARAGRAPH
+$para-fnt-sz-xl : 1.50rem;
+$para-fnt-sz-lg : 1.25rem;
+$para-fnt-sz-nm : 1.00rem;
+$para-fnt-sz-sm : 0.85rem;
+$para-fnt-sz-xs : 0.75rem;
+//////////////////////////////////////// TYPE WEIGHT
+$fnt-wt-lit     : 300.00;
+$fnt-wt-nm      : 300.00;
+$fnt-wt-bld     : 400.00;
+//////////////////////////////////////// TYPE LINE HEIGHT
+$ln-ht-sm       : 1.10;
+$ln-ht-nm       : 1.50;
+$ln-ht-lg       : 1.75;
+//////////////////////////////////////// TYPE COLOR
+$fnt-clr-pri    : $gry-drkest;
+$fnt-clr-sec    : $clr-pri-bse;
+$fnt-clr-tir    : $gry-drk;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// BORDERS
+//////////////////////////////////////// BORDER SIZE
+$bdr-sz-root    : 1px;
+$bdr-sz-lg      : 5px;
+//////////////////////////////////////// BORDER BOTTOM
+$bdr-lit-sm     : 1px solid $gry-liter;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// GENERAL
+//////////////////////////////////////// GENERAL LITE
+$bg-clr-lit     : $gry-liter;
+$fnt-clr-lit    : $gry-drkest;
+//////////////////////////////////////// GENERAL BASE
+$bg-clr-bse     : #FFFFFF;
+$fnt-clr-bse    : $gry-drkest;
+//////////////////////////////////////// GENERAL DARK
+$bg-clr-drk     : $clr-pri-bse;
+$fnt-clr-drk    : #FFFFFF;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// BREAKPOINTS
+//////////////////////////////////////// BREAKPOINTS HORIZONTAL
+$bp-xs-x        : 0;
+$bp-sm-x        : 544px;
+$bp-md-x        : 768px;
+$bp-lg-x        : 992px;
+$bp-xl-x        : 1028px;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// SPACING
+$spcr-root      : 1.00rem;
+
+$spcr-1         : $spcr-root * 0.25;
+$spcr-2         : $spcr-root * 0.50;
+$spcr-3         : $spcr-root * 0.75;
+$spcr-4         : $spcr-root * 1.00;
+
+$spcr-5         : $spcr-root * 1.25;
+$spcr-6         : $spcr-root * 1.50;
+$spcr-7         : $spcr-root * 1.75;
+$spcr-8         : $spcr-root * 2.00;
+
+$spcr-9         : $spcr-root * 2.25;
+$spcr-10        : $spcr-root * 2.50;
+$spcr-11        : $spcr-root * 2.75;
+$spcr-12        : $spcr-root * 3.00;
+
+$spcr-13        : $spcr-root * 3.25;
+$spcr-14        : $spcr-root * 3.50;
+$spcr-15        : $spcr-root * 3.75;
+$spcr-16        : $spcr-root * 4.00;
+
+$spcr-17        : $spcr-root * 4.25;
+$spcr-18        : $spcr-root * 4.50;
+$spcr-19        : $spcr-root * 4.75;
+$spcr-20        : $spcr-root * 5.00;
+
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// Z-INDEX
+$z-idx-fxt      : 1000;
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// NAVBAR
+$nb-itm-spcr    : $spcr-4;
+//////////////////////////////////////// NAVBAR PRI
+$nb-pri-ht      : $spcr-20;
+$nb-pri-itm-ht  : $spcr-9;
+$nb-pri-logo-ht : $spcr-6;
+//////////////////////////////////////// NAVBAR SEC
+$nb-sec-ht      : $spcr-7;
+
+
+$section-title-spacer: $spcr-8;
+$section-header-spacer: $spcr-12;

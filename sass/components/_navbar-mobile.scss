@@ -1,0 +1,79 @@
+//////////////////////////////////////////////////////////////////
+// NAVBAR MOBILE
+.navbar-mobile {
+  width           : 100%;
+  height          : 0;
+  top             : 0;
+      background-color: lighten($clr-pri-drk, 10%);
+  position        : fixed;
+  overflow-y      : scroll;
+  z-index: 20000;
+
+//////////////////////////////////////////////////////////////////
+/// NAVBAR MOBILE GENERAL
+  .container {
+    padding-top: calc(#{$spcr-root} * 2);
+    max-width  : $bp-sm-x;
+    min-height : 99%;
+    overflow-y : scroll;
+  }
+
+//////////////////////////////////////////////////////////////////
+/// NAVBAR MOBILE BUTTON
+  .row {
+    margin          : 0;
+    padding-top     : $spcr-root;
+    padding-bottom  : $spcr-root;
+    background-color: $clr-pri-drk;
+    margin-bottom   : calc(#{$spcr-root} * 2);
+
+    .col-xs-6:nth-child(1) {
+      padding-right: calc(#{$spcr-root} / 2);
+
+      a {
+        padding: 1rem 0;
+      }
+    }
+
+    .col-xs-6:nth-child(2) {
+      padding-left: calc(#{$spcr-root} / 2);
+
+      a {
+        padding: 1rem 0;
+      }
+    }
+  }
+
+//////////////////////////////////////////////////////////////////
+/// NAVBAR MOBILE MENU
+  .nav-menu {
+    list-style: none;
+    text-align: center;
+
+    .nav-item {
+      margin-bottom: calc(#{$spcr-root} / 1);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .nav-link {
+        background-color: lighten($clr-pri-drk, 3%);
+        padding         : $spcr-root;
+        color           : white;
+
+        &:hover {
+          background-color: lighten($clr-pri-drk, 5%);
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+/// NAVBAR MOBILE ACTIVE
+.navbar-mobile {
+  &.is-active {
+    height: 100vh;
+  }
+}

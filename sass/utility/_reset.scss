@@ -1,0 +1,28 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing   : border-box;
+  box-sizing        : border-box;
+  margin            : 0;
+  padding           : 0;
+}
+
+body {
+  font-family: $fnt-fam-pri;
+  font-weight: $fnt-wt-nm;
+}
+
+h1 {
+  font-size: $ttl-fnt-sz-lg;
+}
+
+h2 {
+  font-size: $ttl-fnt-sz-nm;
+}
+
+h3 {
+  font-size: $ttl-fnt-sz-sm;
+}
+
+p {
+  font-size: $para-fnt-sz-nm;
+}

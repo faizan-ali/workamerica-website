@@ -1,0 +1,57 @@
+//////////////////////////////////////////////////////////////////
+// BREAKPOINT MIXIN
+//////////////////////////////////////////////////////////////////
+/// BREAKPOINT MIXIN HORIZONTAL
+//////////////////////////////////////////////////////////////////
+//// BREAKPOINT MIXIN HORIZONTAL UP
+@mixin bp-up-x($size) {
+  @if $size == xs {
+     @media (min-width: $bp-xs-x){
+      @content;
+    }
+  }
+  @if $size == sm {
+     @media (min-width: $bp-sm-x){
+      @content;
+    }
+  }
+  @else if $size == md {
+     @media (min-width: $bp-md-x){
+      @content;
+    }
+  }
+  @else if $size == lg {
+     @media (min-width: $bp-lg-x){
+      @content;
+    }
+  }
+  @else if $size == xl {
+     @media (min-width: $bp-xl-x){
+      @content;
+    }
+  }
+}
+//////////////////////////////////////////////////////////////////
+//// BREAKPOINT MIXIN HORIZONTAL DOWN
+@mixin bp-dwn-x($size) {
+  @if $size == sm {
+     @media (max-width: $bp-sm-x){
+      @content;
+    }
+  }
+  @else if $size == md {
+     @media (max-width: $bp-md-x){
+      @content;
+    }
+  }
+  @else if $size == lg {
+     @media (max-width: $bp-lg-x){
+      @content;
+    }
+  }
+  @else if $size == xl {
+     @media (max-width: $bp-xl-x){
+      @content;
+    }
+  }
+}

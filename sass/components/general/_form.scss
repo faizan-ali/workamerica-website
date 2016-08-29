@@ -1,0 +1,105 @@
+.p-s-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.m-b-4 {
+  margin-bottom: $spcr-root !important;
+}
+
+.m-b-2 {
+  margin-bottom: .70rem !important;
+}
+
+.form {
+  background-color: #FFFFFF;
+  color           : $gry-lit;
+  padding         : $spcr-8 $spcr-4 $spcr-4 $spcr-4;
+  // overflow        : hidden;
+  margin-bottom: $spcr-6;
+  float: left;
+  width: 100%;
+
+  .form-error {
+    color: $clr-fcs-bse;
+  }
+
+  .form-title {
+    font-size   : $para-fnt-sz-lg;
+    margin-bottom: $spcr-4;
+  }
+
+  .form-desc {
+    text-align: left;
+    margin-bottom: $spcr-root;
+  }
+
+  form {
+    fieldset {
+      border: 0;
+      margin-bottom: $spcr-8;
+
+      input {
+        border       : 0;
+        border-bottom: 1px solid $clr-pri-bse;
+        font-size   : $para-fnt-sz-nm;
+        font-family  : $fnt-fam-pri;
+        font-weight  : $fnt-wt-nm;
+        padding      : $spcr-2;
+        color        : $clr-pri-bse;
+        display: block;
+        width: 100%;
+
+        &::-webkit-input-placeholder {
+          color: inherit;
+        }
+
+        &:-moz-placeholder {
+          color: inherit;
+        }
+
+        &::-moz-placeholder {
+          color: inherit;
+        }
+
+        &:-ms-input-placeholder {
+          color: inherit;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &-form-light {
+    background-color: $bg-clr-lit ;
+    color           : $bg-clr-lit;
+
+    form {
+      fieldset {
+        input {}
+      }
+    }
+  }
+
+  &-form-dark {
+    background-color: $bg-clr-lit ;
+    color           : $bg-clr-drk;
+
+    form {
+      fieldset {
+        input {}
+      }
+    }
+  }
+}
+
+@include bp-dwn-x(sm) {
+  .p-l-r-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
