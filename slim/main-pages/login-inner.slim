@@ -6,7 +6,7 @@
           .section-header.text-center
             .section-title-pri Login
           .form
-            form action="https://www.platform.workamerica.co/login-servlet" method="post"
+            form action="" method="post"
               .text-center.m-b-4
                 .form-error#general-error.hide Your e-mail address or password was invalid.
                 .form-error#bad-error.hide An error has occurred. Please try again.
@@ -16,6 +16,7 @@
                 fieldset.form-group.form-group-dark
                   input.form-control type="password" autocomplete="false" placeholder="Password" name="password"
                 .text-center.m-b-8
-                  button.btn.btn-fcs.btn-sm type="submit"  Submit
+                  button.btn.btn-fcs.btn-sm type="button"
+                    a href="http://www.secure.workamerica.co" Submit
                 .text-center
                   a href="forgot-password.html" Forgot your password?
